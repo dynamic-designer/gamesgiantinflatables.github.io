@@ -601,9 +601,11 @@ body {
                     height: 32px;
                     line-height: 33px;
                 }
+
                 ul {
                     li {
                         margin-bottom: 5px;
+
                         a {
                             font-size: 12px;
                         }
@@ -811,6 +813,8 @@ body {
 }
 
 .faq-thumbnail {
+    margin-bottom: 50px;
+
     .faq-box {
         img {
             border-radius: 20px;
@@ -818,10 +822,26 @@ body {
 
         .f-info {
             .f-name {
-                font-size: 24px;
-                margin: 15px 0;
+                color: #333;
+                font-family: 'SKODA';
+                font-size: 30px;
+                font-weight: 600;
+                line-height: 30px;
+                margin: 15px 0 30px;
             }
         }
+    }
+}
+
+.faqImages-slider {
+    .slick-prev {
+        left: 20px;
+        z-index: 1;
+    }
+
+    .slick-next {
+        right: 20px;
+        z-index: 1;
     }
 }
 
@@ -1147,7 +1167,7 @@ body {
 
     &::after {
         content: "";
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.7);
         position: absolute;
         left: 0;
         top: 0;
@@ -1158,17 +1178,19 @@ body {
     .ourProducts-banner {
         color: white;
         text-align: center;
-        padding: 70px 0 30px;
+        padding: 45px 0 15px;
         position: relative;
         z-index: 1;
 
         .p-title {
+            font-family: 'Ageta';
             font-size: 50px;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
+            text-transform: uppercase;
         }
 
         .p-subTitle {
-            font-size: 20px;
+            font-size: 24px;
             margin-bottom: 40px;
         }
 
@@ -1177,12 +1199,36 @@ body {
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            font-size: 20px;
-            margin-top: 30px;
+            font-size: 26px;
+            margin-top: 24px;
 
             .feather {
-                width: 30px;
-                height: 30px;
+                width: 44px;
+                height: 44px;
+                stroke-width: 1;
+                margin-right: 20px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .ourProducts-banner {
+            .p-title {
+                font-size: 34px;
+            }
+
+            .p-subTitle {
+                font-size: 16px;
+            }
+
+            .p-contact {
+                font-size: 18px;
+
+                .feather {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 15px;
+                }
             }
         }
     }
@@ -1197,14 +1243,17 @@ body {
 
     .contect-box {
         .i-title {
+            color: #333;
+            font-family: 'SKODA';
             font-size: 28px;
             font-weight: 600;
             line-height: 35px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .i-details p {
             font-size: 18px;
+            line-height: 28px;
         }
     }
 
@@ -1219,6 +1268,261 @@ body {
             .i-details p {
                 font-size: 14px;
                 line-height: 20px;
+            }
+        }
+    }
+}
+
+.update-box {
+    border-radius: 20px;
+    margin-bottom: 30px;
+    transition: all 0.5s;
+
+    .img-box {
+        img {
+            border-radius: 20px;
+        }
+    }
+
+    .contect-box {
+        padding: 50px 20px;
+
+        .u-title {
+            color: #333;
+            font-family: 'SKODA';
+            font-size: 34px;
+            font-weight: 600;
+            line-height: 40px;
+            margin-bottom: 30px;
+        }
+
+        .u-details p {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    &.is-active,
+    &:hover {
+        background-color: #f1f1f1;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .contect-box {
+            padding: 30px 20px;
+
+            .u-title {
+                font-size: 24px;
+                line-height: 24px;
+                margin-bottom: 10px;
+            }
+
+            .u-details p {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+.pagination {
+    .page-item {
+        margin: 0 5px;
+
+        &.go-prev .page-link,
+        &.go-next .page-link {
+            padding: 0;
+            margin: 0 !important;
+            background-color: #0b0c2c;
+            color: white;
+            height: 30px;
+            width: 30px;
+            border-radius: 30px;
+            margin-left: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &.disabled {
+            .page-link {
+                background-color: transparent;
+            }
+
+            &.active,
+            &:hover {
+                .page-link {
+                    background-color: transparent !important;
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        &:not(.go-next):not(.go-prev):not(.disabled) {
+            .page-link {
+                background: white;
+                border: 2px solid #ccc;
+                border-radius: 10px;
+                color: #0b0c2c;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+                padding: 0;
+            }
+        }
+
+        .page-link {
+            border: 0 none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.5s;
+        }
+
+        &.active,
+        &:hover {
+            .page-link {
+                background-color: #ccc !important;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .page-item {
+            margin: 0 5px;
+
+            &:not(.go-next):not(.go-prev):not(.disabled) {
+                .page-link {
+                    width: 40px;
+                    height: 40px;
+                    padding: 0;
+                }
+            }
+
+            .page-link {
+                font-size: 16px;
+            }
+
+        }
+    }
+}
+
+.page-title {
+    .background-container {
+        background: url(https://placehold.co/2000x350/00645b/02524b) center center/cover no-repeat local;
+        color: var(--theme-base-white);
+        height: 400px;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            background-color: rgba(0, 0, 0, 0.5);
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .p-container {
+            color: white;
+            font-family: 'SKODA';
+            text-align: center;
+
+            .p-mainTitle {
+                font-size: 65px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+            }
+
+            .p-subTitle {
+                font-size: 32px;
+            }
+        }
+    }
+
+    .breadcrumb-container {
+        .breadcrumb {
+            li {
+                position: relative;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    color: #000;
+                    font-size: 18px;
+                    padding: 13px 20px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+
+                    .feather {
+                        margin-right: 10px;
+                        width: 30px;
+                        height: 30px;
+                        stroke-width: 1.5;
+                    }
+
+                    &.is-active {
+                        font-weight: 600;
+
+                        .feather {
+                            opacity: 0;
+                            width: 1px;
+                        }
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    height: 30px;
+                    width: 1px;
+                    position: absolute;
+                    background: #666;
+                    top: 50%;
+                    right: -7px;
+                    transform: translateY(-50%);
+                }
+
+                &:last-child::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .background-container {
+            height: 300px;
+
+            .p-container {
+                .p-mainTitle {
+                    font-size: 46px;
+                }
+
+                .p-subTitle {
+                    font-size: 26px;
+                }
+            }
+        }
+
+        .breadcrumb-container {
+            .breadcrumb {
+                li {
+                    a {
+                        font-size: 14px;
+                        padding: 6px 15px;
+
+                        .feather {
+                            width: 24px;
+                            height: 24px;
+                            stroke-width: 1.5;
+                        }
+                    }
+                }
             }
         }
     }

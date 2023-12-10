@@ -39,6 +39,26 @@
         }
     }
 
+    //Setting hero slider
+    function faqImagesSlider() {
+        if ($(".faqImages-slider").length) {
+            $(".faqImages-slider").slick({
+                autoplay: false,
+                autoplaySpeed: 6000,
+                pauseOnHover: true,
+                infinite: true,
+                dots: true,
+                fade: true,
+                cssEase: 'linear',
+                arrows: true,
+                prevArrow:
+                    '<div class="slick-prev"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
+                nextArrow:
+                    '<div class="slick-next"><span class="btn btn-primary"><i data-feather="arrow-right-circle"></i></span></div>'
+            });
+        }
+    }
+
     // Parallax background
     function bgParallax() {
         if ($(".parallax").length) {
@@ -126,6 +146,7 @@
         heroSlider();
         productSlider();
         updatesSlider();
+        faqImagesSlider();
 
         var windowHeight = $(window).outerHeight()
         var headerHeight = $('header').outerHeight();
