@@ -34,24 +34,62 @@
     }
 }
 
+.container-small {
+    max-width: 1300px;
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        max-width: calc(100% - 300px);
+    }
+}
+
 body {
+    color: #666;
+    font-family: 'Poppins', sans-serif;
     line-height: normal;
+}
+
+.section-box {
+    padding: 50px 0;
+
+    &.section-highlight {
+        background-color: #f7f7f7;
+    }
+}
+
+.bring-up {
+    position: relative;
+    z-index: 1;
 }
 
 .btn-primary {
     background: white;
     border: 0 none;
     color: #1a1a1a;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
     font-weight: 600;
     margin: 3px;
+    padding: 1px 20px;
     position: relative;
     text-transform: uppercase;
     transition: border 0.2s ease 0s;
+    height: 50px;
+    line-height: 50px;
 
     &::before {
-        content: '';
+        content: "";
         background: rgb(248, 13, 105);
-        background: linear-gradient(135deg, rgba(248, 13, 105, 1) 10%, rgba(139, 29, 165, 1) 20%, rgba(37, 124, 229, 1) 30%, rgba(225, 165, 42, 1) 40%, rgba(243, 101, 5, 1) 50%, rgba(63, 144, 16, 1) 60%, rgba(229, 27, 96, 1) 70%, rgba(128, 40, 173, 1) 80%, rgba(4, 149, 252, 1) 90%, rgba(4, 149, 252, 1) 100%);
+        background: linear-gradient(135deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
         border-radius: calc(6px + 1px);
         display: block;
         position: absolute;
@@ -63,11 +101,23 @@ body {
         filter: blur(6px);
         opacity: 0.6;
         transform: scale(0.9);
-        transition: transform 0.35s ease;
+        transition: all 0.3s;
     }
 
     &::after {
-        content: '';
+        content: "";
+        border-radius: calc(6px + 1px);
+        background-image: linear-gradient(135deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
         display: block;
         position: absolute;
         top: -3px;
@@ -75,22 +125,245 @@ body {
         width: calc(100% + 6px);
         height: calc(100% + 6px);
         z-index: -1;
-        border-radius: calc(6px + 1px);
-        background-image: linear-gradient(135deg, rgba(248, 13, 105, 1) 10%, rgba(139, 29, 165, 1) 20%, rgba(37, 124, 229, 1) 30%, rgba(225, 165, 42, 1) 40%, rgba(243, 101, 5, 1) 50%, rgba(63, 144, 16, 1) 60%, rgba(229, 27, 96, 1) 70%, rgba(128, 40, 173, 1) 80%, rgba(4, 149, 252, 1) 90%, rgba(4, 149, 252, 1) 100%);
+        transition: all 0.3s;
     }
 
     &:hover {
-        background: black;
+        background: white;
+        color: black;
 
-        &::before {}
+        &::before {
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            animation: animatedGradient 1s infinite;
+        }
 
-        &::after {}
+        &::after {
+            animation: animatedGradient 1s infinite;
+        }
+    }
+
+    &:active {
+        background-color: white !important;
+        border-color: white !important;
+        color: black !important;
+    }
+
+    &.has-icon {
+        padding-right: 60px;
+
+        .icon {
+            position: absolute;
+            right: 20px;
+            top: -1px;
+
+            .feather {
+                stroke-width: 1.5;
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
+
+    &.btn-sm {
+        font-size: 16px;
+        font-weight: 600;
+        height: 30px;
+        line-height: 30px;
+        padding: 1px 10px;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        font-size: 14px;
+        padding: 1px 14px;
+        height: 36px;
+        line-height: 35px;
+
+        &.has-icon {
+            padding-right: 45px;
+
+            .icon {
+                right: 13px;
+
+                .feather {
+                    height: 26px;
+                    width: 26px;
+                }
+            }
+        }
+
+        &.btn-sm {
+            font-size: 13px;
+            height: 24px;
+            line-height: 24px;
+        }
+    }
+
+}
+
+@keyframes animatedGradient {
+    0% {
+        background: linear-gradient(135deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
+    }
+
+    9% {
+        background: linear-gradient(170deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
+    }
+
+    18% {
+        background: linear-gradient(205deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
+    }
+
+    27% {
+        background: linear-gradient(140deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
+    }
+
+    36% {
+        background: linear-gradient(175deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
+    }
+
+    45% {
+        background: linear-gradient(210deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
+    }
+
+    64% {
+        background: linear-gradient(245deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
+    }
+
+    73% {
+        background: linear-gradient(280deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
+    }
+
+    82% {
+        background: linear-gradient(315deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
+    }
+
+    91% {
+        background: linear-gradient(360deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
+    }
+
+    100% {
+        background: linear-gradient(135deg,
+                rgba(248, 13, 105, 1) 10%,
+                rgba(139, 29, 165, 1) 20%,
+                rgba(37, 124, 229, 1) 30%,
+                rgba(225, 165, 42, 1) 40%,
+                rgba(243, 101, 5, 1) 50%,
+                rgba(63, 144, 16, 1) 60%,
+                rgba(229, 27, 96, 1) 70%,
+                rgba(128, 40, 173, 1) 80%,
+                rgba(4, 149, 252, 1) 90%,
+                rgba(4, 149, 252, 1) 100%);
     }
 }
 
 .heading {
     h2 {
+        color: #000;
         display: table;
+        font-family: 'Ageta';
         font-size: 35px;
         position: relative;
         padding-bottom: 15px;
@@ -100,7 +373,11 @@ body {
         &::after {
             content: "";
             background: rgb(84, 125, 194);
-            background: linear-gradient(90deg, rgba(84, 125, 194, 1) 0%, rgba(238, 24, 90, 1) 33%, rgba(140, 198, 46, 1) 66%, rgba(250, 122, 38, 1) 100%);
+            background: linear-gradient(90deg,
+                    rgba(84, 125, 194, 1) 0%,
+                    rgba(238, 24, 90, 1) 33%,
+                    rgba(140, 198, 46, 1) 66%,
+                    rgba(250, 122, 38, 1) 100%);
             position: absolute;
             bottom: 0;
             left: 0;
@@ -120,6 +397,292 @@ body {
             font-size: 50px;
         }
     }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        h2 {
+            font-size: 26px;
+        }
+
+        &.heading-large {
+            h2 {
+                font-size: 34px;
+            }
+        }
+    }
+}
+
+.hero-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    .hero-slider {
+        height: 100%;
+
+        .slick-list {
+            height: 100%;
+
+            .slick-track {
+                height: 100%;
+
+                .slick-slide {
+                    display: flex;
+                    align-items: flex-end;
+                    padding-bottom: 150px;
+
+                    &::after {
+                        content: "";
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        background: linear-gradient(0, rgb(0 0 0 / 50%), transparent);
+                        bottom: 0;
+                        z-index: -2;
+                    }
+                }
+
+                .slider-bg {
+                    display: none;
+                }
+
+                .slide-caption {
+                    text-align: center;
+                    text-transform: uppercase;
+
+                    h2 {
+                        color: white;
+                        font-family: 'SKODA';
+                        font-size: 40px;
+                        font-weight: 600;
+                        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+                        letter-spacing: 2px;
+                    }
+
+                    h1 {
+                        color: white;
+                        font-family: 'SKODA';
+                        font-size: 70px;
+                        font-weight: 600;
+                        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                        letter-spacing: 7px;
+                        margin-bottom: 50px;
+                    }
+                }
+            }
+        }
+
+        .slick-dots {
+            bottom: 70px;
+
+            li {
+                margin: 0 15px;
+
+                button {
+                    background-color: white;
+                    border: 2px solid white;
+                    border-radius: 50%;
+
+                    &::before {
+                        border-radius: 50%;
+                        opacity: 0;
+                        transition: all 0.5s;
+                        font-size: 0;
+                    }
+                }
+
+                &.slick-active {
+                    button::before {
+                        content: "";
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid white;
+                        opacity: 1;
+                        top: -10px;
+                        left: -10px;
+                    }
+                }
+            }
+
+            li,
+            li button,
+            li button::before {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .hero-slider {
+            .slick-list .slick-track .slick-slide {
+                padding-bottom: 100px;
+
+                .slide-caption {
+                    h2 {
+                        font-size: 32px;
+                    }
+
+                    h1 {
+                        font-size: 50px;
+                        letter-spacing: 5px;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+
+            .slick-dots {
+                bottom: 45px;
+
+                li {
+                    margin: 0 10px;
+
+                    &.slick-active {
+                        button::before {
+                            width: 30px;
+                            height: 30px;
+                            top: -8px;
+                            left: -8px;
+                        }
+                    }
+                }
+
+                li,
+                li button,
+                li button::before {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+        }
+    }
+}
+
+.theme-footer {
+    .footer-sitemap {
+        background-color: #060807;
+        padding: 20px 0;
+
+        .widget {
+            .btn {
+                cursor: auto;
+                font-family: 'SKODA';
+                font-size: 18px;
+                text-transform: capitalize;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+                padding: 0px 15px;
+                height: 40px;
+                line-height: 40px;
+            }
+
+            ul {
+                padding-left: 15px;
+                list-style: none;
+
+                li {
+                    margin-bottom: 10px;
+
+                    a {
+                        color: white;
+                        font-size: 15px;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .footer-sitemap {
+            .widget {
+                .btn {
+                    font-size: 16px;
+                    letter-spacing: 0px;
+                    margin-bottom: 15px;
+                    height: 32px;
+                    line-height: 33px;
+                }
+                ul {
+                    li {
+                        margin-bottom: 5px;
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.slick-slider {
+    .slick-arrow {
+        height: auto;
+        width: auto;
+
+        .btn-primary {
+            padding: 0 10px;
+
+            .feather {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        &::after,
+        &::before {
+            font-size: 0px;
+        }
+    }
+
+    .slick-prev {
+        left: -60px;
+    }
+
+    .slick-next {
+        right: -60px;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .slick-arrow {
+            .btn-primary {
+                padding: 0 5px;
+
+                .feather {
+                    width: 26px;
+                    height: 26px;
+                    stroke-width: 1.5px;
+                }
+            }
+        }
+
+        .slick-prev {
+            left: -50px;
+        }
+
+        .slick-next {
+            right: -50px;
+        }
+    }
+}
+
+.has-enqueryBox {
+    .is-fluidBox {
+        width: calc(100% - 400px);
+    }
+
+    .is-enqueryBox {
+        width: 400px;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .is-fluidBox {
+            width: calc(100% - 350px);
+        }
+
+        .is-enqueryBox {
+            width: 350px;
+        }
+    }
 }
 
 .productSlider-thumbnail {
@@ -130,7 +693,9 @@ body {
 
         .p-info {
             background: rgb(0, 0, 0);
-            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+            background: linear-gradient(0deg,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 0) 100%);
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
             padding: 25px;
@@ -144,8 +709,11 @@ body {
 
             .p-name {
                 color: white;
+                font-family: 'SKODA';
                 font-size: 30px;
-                font-weight: bold;
+                font-weight: 600;
+                line-height: 30px;
+                letter-spacing: 2px;
                 margin-bottom: 20px;
             }
 
@@ -156,24 +724,44 @@ body {
 
                 .p-price {
                     color: white;
-                    font-size: 24px;
+                    font-family: 'SKODA';
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .productSlider-box {
+            .p-info {
+                .p-name {
+                    font-size: 20px;
+                }
+
+                .p-footer {
+                    .p-price {
+                        font-size: 18px;
+                    }
                 }
             }
         }
     }
 }
 
-.updateHorizontalSlider-thumbnail {
-    .updateHorizontalSlider-box {
+.faqSlider-thumbnail {
+    .faqSlider-box {
         border-radius: 20px;
         overflow: hidden;
         position: relative;
 
-        .u-info {
-            background: rgba(0, 0, 0, 0.7);
+        .f-info {
+            background: linear-gradient(0deg,
+                    rgba(0, 0, 0, 0.8) 0%,
+                    rgba(0, 0, 0, 0) 100%);
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
-            padding: 25px 30px;
+            padding: 25px;
+            padding-top: 100px;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -181,62 +769,457 @@ body {
             width: 100%;
             z-index: 0;
 
-            .u-name {
+            .f-name {
                 color: white;
-                font-size: 28px;
-                margin-bottom: 20px;
+                font-family: 'SKODA';
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 24px;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
             }
 
-            .u-footer {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+            .f-details {
+                color: #fff;
+                font-family: "SKODA";
+                font-size: 20px;
+                line-height: 20px;
+                letter-spacing: 1px;
+                margin-bottom: 15px;
+            }
+        }
+    }
 
-                .u-location {
-                    color: white;
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .faqSlider-box {
+            .f-info {
+                .f-name {
                     font-size: 18px;
+                    line-height: 18px;
+                    margin-bottom: 8px;
+                }
+
+                .f-details {
+                    font-size: 14px;
+                    line-height: 16px;
+                    letter-spacing: 0px;
+                    margin-bottom: 10px;
                 }
             }
         }
     }
 }
 
-.updateVerticalSlider-thumbnail {
-    border: 1px solid #e6e6e6 !important;
-    border-radius: 20px;
-    margin-bottom: 20px;
-
-    .updateVerticalSlider-box {
-        padding: 25px;
-
+.faq-thumbnail {
+    .faq-box {
         img {
             border-radius: 20px;
-            height: 120px;
         }
 
-        .u-info {
-            .u-name {
-                font-size: 25px;
-                line-height: 25px;
-                margin-bottom: 15px;
-                margin-top: -5px;
+        .f-info {
+            .f-name {
+                font-size: 24px;
+                margin: 15px 0;
             }
-            .u-details {
-                color: #666666;
+        }
+    }
+}
+
+.updateHorizontal-slider {
+    .updateHorizontalSlider-thumbnail {
+        .updateHorizontalSlider-box {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+
+            .u-info {
+                background: rgba(0, 0, 0, 0.7);
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                padding: 25px 30px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                z-index: 0;
+
+                .u-name {
+                    color: #fff;
+                    font-family: 'SKODA';
+                    font-size: 28px;
+                    line-height: 30px;
+                    margin-bottom: 10px;
+                }
+
+                .u-footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .u-location {
+                        color: white;
+                        font-size: 18px;
+                        font-family: "SKODA";
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+    }
+
+    .slick-arrow.slick-prev {
+        left: 20px;
+        z-index: 1;
+    }
+
+    .slick-arrow.slick-next {
+        right: 20px;
+        z-index: 1;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .updateHorizontalSlider-thumbnail {
+            .updateHorizontalSlider-box {
+                .u-info {
+                    padding: 25px 30px;
+
+                    .u-name {
+                        font-size: 22px;
+                        line-height: 22px;
+                    }
+
+                    .u-footer {
+                        .u-location {
+                            color: white;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.updateVertical-slider {
+    height: 100%;
+    padding-bottom: 70px;
+
+    .updateVerticalSlider-thumbnail {
+        border: 1px solid #e6e6e6 !important;
+        border-radius: 20px;
+        margin-bottom: 20px;
+
+        .updateVerticalSlider-box {
+            padding: 25px;
+
+            .left-block {
+                width: 150px
+            }
+
+            .right-block {
+                width: calc(100% - 150px)
+            }
+
+            img {
+                border-radius: 20px;
+            }
+
+            .u-info {
+                .u-name {
+                    color: #000;
+                    font-family: "SKODA";
+                    font-size: 26px;
+                    font-weight: 600;
+                    line-height: 26px;
+                    margin-bottom: 15px;
+                }
+
+                .u-details {
+                    color: #666666;
+                    font-family: "SKODA";
+                    font-size: 20px;
+                    letter-spacing: 1px;
+                    line-height: 20px;
+                }
+            }
+
+            .u-btn {
+                margin-top: 20px;
+                text-align: right;
+            }
+        }
+
+        &.slick-current {
+            background-color: #f2f2f2;
+            border-color: #f2f2f2 !important;
+            position: relative;
+            z-index: 0;
+        }
+    }
+
+    .slick-arrow {
+        bottom: 0;
+        top: auto;
+        transform: translateY(0);
+    }
+
+    .slick-prev {
+        left: 0;
+    }
+
+    .slick-next {
+        right: 0;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        padding-bottom: 40px;
+
+        .updateVerticalSlider-thumbnail {
+            margin-bottom: 15px;
+
+            .updateVerticalSlider-box {
+                padding: 15px;
+
+                .left-block {
+                    width: 110px
+                }
+
+                .right-block {
+                    width: calc(100% - 110px)
+                }
+
+                .u-info {
+                    .u-name {
+                        font-size: 18px;
+                        line-height: 18px;
+                        margin-bottom: 8px;
+                    }
+
+                    .u-details {
+                        font-size: 14px;
+                        letter-spacing: 0;
+                        line-height: 16px;
+                    }
+                }
+
+                .u-btn {
+                    margin-top: 13px;
+                }
+            }
+        }
+    }
+}
+
+.viewAllUpdate-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.enquire-form {
+    .is-addon {
+        background: #eee;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        padding: 5px;
+
+        .feather {
+            color: #666;
+        }
+    }
+
+    .information-text {
+        color: #aaa;
+        display: block;
+        font-size: 11px;
+        margin-bottom: 15px;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .is-addon {
+            height: 32px;
+            width: 32px;
+        }
+
+        .form-control,
+        .form-select {
+            font-size: 14px;
+            padding: 4px 7px;
+        }
+    }
+}
+
+.info-block {
+    height: 100%;
+
+    .card {
+        border: 0 none;
+        box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 5px 3px rgba(0, 0, 0, .1);
+        border-radius: 10px;
+        height: 100%;
+        overflow: hidden;
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 600;
+            height: 60px;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px 15px;
+
+            .feather {
+                width: 40px;
+                height: 40px;
+                margin-top: 0px;
+                stroke-width: 1.5px;
+                margin-right: 10px;
+            }
+        }
+
+        .card-body {
+            display: inline;
+            font-family: 'SKODA';
+            padding: 20px;
+        }
+
+        &.card-blue {
+            .card-header {
+                background-color: #3399cc;
+            }
+        }
+
+        &.card-purple {
+            .card-header {
+                background-color: #8f28d5;
+            }
+
+            .card-body {
                 font-size: 20px;
+            }
+        }
+
+        &.card-red {
+            .card-header {
+                background-color: #ee0f74;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .card {
+            .card-header {
+                font-size: 20px;
+                height: 46px;
+
+                .feather {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+
+            .card-body {
+                padding: 15px;
+            }
+
+            &.card-purple {
+                .card-body {
+                    font-size: 16px;
+
+                    .feather {
+                        stroke-width: 1.5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.parallax {
+    position: relative;
+
+    &::after {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .ourProducts-banner {
+        color: white;
+        text-align: center;
+        padding: 70px 0 30px;
+        position: relative;
+        z-index: 1;
+
+        .p-title {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .p-subTitle {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .p-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 20px;
+            margin-top: 30px;
+
+            .feather {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+.information-box {
+    .img-box {
+        img {
+            border-radius: 20px;
+        }
+    }
+
+    .contect-box {
+        .i-title {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 35px;
+            margin-bottom: 20px;
+        }
+
+        .i-details p {
+            font-size: 18px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .contect-box {
+            .i-title {
+                font-size: 18px;
+                line-height: 24px;
+                margin-bottom: 10px;
+            }
+
+            .i-details p {
+                font-size: 14px;
                 line-height: 20px;
             }
         }
-
-        .u-btn {
-            margin-top: 20px;
-            text-align: right;
-        }
-    }
-    &.slick-current {
-        background-color: #f2f2f2;
-        border-color: #f2f2f2;
-        position: relative;
-        z-index: 0;
     }
 }

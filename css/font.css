@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+@font-face {
+    font-family: 'Ageta';
+    src: url('../fonts/ageta_chubby.otf') format('otf'),
+        url('../fonts/ageta_chubby.woff2') format('woff2'),
+        url('../fonts/ageta_chubby.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SKODA';
+    src: url('../fonts/skodanext-regular.woff2') format('woff2'),
+        url('../fonts/skodanext-regular.woff') format('woff'),
+        url('../fonts/skodanext-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SKODA';
+    src: url('../fonts/skodanext-bold.woff2') format('woff2'),
+        url('../fonts/skodanext-bold.woff') format('woff'),
+        url('../fonts/skodanext-bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SKODA';
+    src: url('../fonts/skodanext-black.woff2') format('woff2'),
+        url('../fonts/skodanext-black.woff') format('woff'),
+        url('../fonts/skodanext-black.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
