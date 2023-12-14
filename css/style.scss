@@ -465,7 +465,6 @@ body {
                         font-size: 70px;
                         font-weight: 600;
                         text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-                        letter-spacing: 7px;
                         margin-bottom: 50px;
                     }
                 }
@@ -1527,6 +1526,95 @@ body {
                     }
                 }
             }
+        }
+    }
+}
+
+
+.textify {
+
+    .word,
+    .char {
+        display: inline-block;
+        will-change: transform, opacity;
+    }
+
+    .line-box,
+    .line {
+        overflow: hidden;
+    }
+
+    .char {
+        position: relative;
+    }
+
+    .char::before,
+    .char::after,
+    .word::after,
+    .word::before,
+    .line::after,
+    .line::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        transition: inherit;
+        display: none;
+    }
+
+    .char::before,
+    .char::after {
+        content: attr(data-char);
+    }
+
+    .word::after,
+    .word::before {
+        content: attr(data-word);
+    }
+
+    .line::after,
+    .line::before {
+        content: attr(data-line);
+    }
+}
+
+.mf-cursor {
+    &::after {
+        content: "";
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        top: -24px;
+        left: -24px;
+        border: 1px solid #673AB7;
+        border-radius: 40px;
+        transform: scale(0.9);
+    }
+
+    &::before {
+        transform: scale(0.5);
+        background: linear-gradient(315deg, #FF5722, #673AB7);
+    }
+
+    &.-hidden {
+
+        &::after,
+        &::before {
+            transform: scale(0);
+        }
+    }
+
+    &.-pointer {
+
+        &::after,
+        &::before {
+            transform: scale(0.2);
+        }
+    }
+
+    &.-text {
+        &::after {
+            transform: scale(0);
         }
     }
 }

@@ -150,7 +150,46 @@
 
         var windowHeight = $(window).outerHeight()
         var headerHeight = $('header').outerHeight();
-        $(".hero-slider-wrapper").css("height", (windowHeight - 200)+"px");
+        $(".hero-slider-wrapper").css("height", (windowHeight - 200) + "px");
+
+        var cursor = new MouseFollower();
+
+        new Textify({
+            el: '.slider-heading',
+            animation: {
+                stagger: 0.05,
+                duration: 0.7,
+                ease: 'expo.inOut',
+                //animateProps: {"rotate":60,"scale":0,"y":0}
+            }
+        }, gsap);
+
+        new Textify({
+            el: '.heading h2',
+            animation: {
+            stagger: 0.05,
+            duration: 0.7,
+            ease: 'expo.inOut',
+            animateProps: {"rotate":60,"scale":0,"y":0}
+            }
+        },gsap);
+
+        new Textify({
+            el: 'p',
+            splitType: 'lines',
+            largeText: true,
+            animation: {
+            by: 'lines',
+            stagger: 0.075,
+            duration: 0.7,
+            ease: 'power2',
+            transformOrigin: 'left top',
+            animateProps: {"rotate":30,"opacity":0}
+            }
+        }, gsap);
+
+        //Animate On Scroll Init
+        AOS.init();
 
         //Feather Icon Init
         feather.replace();

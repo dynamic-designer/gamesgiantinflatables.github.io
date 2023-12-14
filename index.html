@@ -9,7 +9,7 @@
     <meta name="author" content="themexriver">
 
     <!-- Page Title -->
-    <title>Industrial Inflatables :: Any Size Any Shape</title>
+    <title>Title :: Heading 1</title>
 
     <!-- Favicon and Touch Icons -->
     <link href="images/favicon/favicon.png" rel="shortcut icon" type="image/png">
@@ -27,6 +27,7 @@
     <link href="css/slick.css" rel="stylesheet">
     <link href="css/slick-theme.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet" />
@@ -40,8 +41,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 slide-caption">
-                            <h2>Welcome to</h2>
-                            <h1>A complete line of<br>Products is availavle</h1>
+                            <h2 data-cursor-text="Explore">Welcome to</h2>
+                            <h1 data-textify class="slider-heading text-center">A complete line of<br>Products is
+                                availavle</h1>
                             <div>
                                 <a class="btn btn-primary has-icon">
                                     View More
@@ -680,7 +682,8 @@
         <div class="container container-small">
             <div class="row gx-5">
                 <div class="col col-sm-4">
-                    <div class="info-block">
+                    <div class="info-block" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="200"
+                        data-aos-duration="750">
                         <div class="card card-blue">
                             <div class="card-header">
                                 <i data-feather="map-pin"></i>
@@ -696,7 +699,8 @@
                     </div>
                 </div>
                 <div class="col col-sm-4">
-                    <div class="info-block">
+                    <div class="info-block" data-aos="zoom-out" data-aos-easing="ease-in-sine" data-aos-offset="200"
+                        data-aos-duration="750">
                         <div class="card card-purple">
                             <div class="card-header">
                                 <i data-feather="award"></i>
@@ -726,7 +730,8 @@
                     </div>
                 </div>
                 <div class="col col-sm-4">
-                    <div class="info-block">
+                    <div class="info-block" data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-offset="200"
+                        data-aos-duration="750">
                         <div class="card card-red">
                             <div class="card-header">
                                 <i data-feather="mail"></i>
@@ -868,14 +873,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-plugin-collection.js"></script>
+    <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
-    <script>
-        var cursor = new MouseFollower();
-    </script>
+    <script src=" https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <!-- Custom script for this template -->
     <script src="js/app.js"></script>
