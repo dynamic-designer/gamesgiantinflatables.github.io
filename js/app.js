@@ -47,7 +47,7 @@
                 autoplaySpeed: 6000,
                 pauseOnHover: true,
                 infinite: true,
-                dots: true,
+                dots: false,
                 fade: true,
                 cssEase: 'linear',
                 arrows: true,
@@ -84,6 +84,23 @@
                 infinite: true,
                 slidesToShow: 3,
                 dots: false,
+                arrows: true,
+                autoplay: false,
+                autoplaySpeed: 4000,
+                prevArrow:
+                    '<div class="slick-prev"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
+                nextArrow:
+                    '<div class="slick-next"><span class="btn btn-primary"><i data-feather="arrow-right-circle"></i></span></div>'
+            });
+        }
+    }
+
+    function productCategorySlider() {
+        if ($(".productCategory-slider").length) {
+            $(".productCategory-slider").slick({
+                infinite: true,
+                slidesToShow: 3,
+                dots: true,
                 arrows: true,
                 autoplay: false,
                 autoplaySpeed: 4000,
@@ -138,6 +155,84 @@
         }
     }
 
+    //Setting Product Detail Slider
+    function productDetailSlider() {
+        if ($(".productDetail-slider").length) {
+            $('.productDeatailImage-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: false,
+                dots: false,
+                arrows: true,
+                autoplay: false,
+                autoplaySpeed: 4000,
+                prevArrow:
+                    '<div class="slick-prev slick-btn"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
+                nextArrow:
+                    '<div class="slick-next slick-btn"><span class="btn btn-primary"><i data-feather="arrow-right-circle"></i></span></div>',
+            });
+
+            $('.productDeatailThumb-slider')
+                .on('init', function (event, slick) {
+                    $('.productDeatailThumb-slider .slick-slide.slick-current').addClass('is-active');
+                })
+                .slick({
+                    draggable: true,
+                    infinite: false,
+                    slidesToShow: 7,
+                    dots: false,
+                    arrows: true,
+                    autoplay: false,
+                    autoplaySpeed: 4000,
+                    prevArrow:
+                        '<div class="slick-prev slick-btn"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
+                    nextArrow:
+                        '<div class="slick-next slick-btn"><span class="btn btn-primary"><i data-feather="arrow-right-circle"></i></span></div>',
+                    responsive: [
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 3,
+                            }
+                        }
+                    ]
+                });
+
+            $('.productDeatailImage-slider').on('afterChange', function (event, slick, currentSlide) {
+                $('.productDeatailThumb-slider').slick('slickGoTo', currentSlide);
+                var currrentNavSlideElem = '.productDeatailThumb-slider .slick-slide[data-slick-index="' + currentSlide + '"]';
+                $('.productDeatailThumb-slider .slick-slide.is-active').removeClass('is-active');
+                $(currrentNavSlideElem).addClass('is-active');
+            });
+
+            $('.productDeatailThumb-slider').on('click', '.slick-slide', function (event) {
+                event.preventDefault();
+                var goToSingleSlide = $(this).data('slick-index');
+
+                $('.productDeatailImage-slider').slick('slickGoTo', goToSingleSlide);
+            });
+        }
+    }
+
+    function moreUpdateSlider() {
+        if ($(".moreUpdates-slider").length) {
+            $(".moreUpdates-slider").slick({
+                infinite: true,
+                slidesToShow: 1,
+                dots: true,
+                arrows: true,
+                autoplay: false,
+                autoplaySpeed: 4000,
+                prevArrow:
+                    '<div class="slick-prev"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
+                nextArrow:
+                    '<div class="slick-next"><span class="btn btn-primary"><i data-feather="arrow-right-circle"></i></span></div>'
+            });
+        }
+    }
+
+
+
     /*==========================================================================
           WHEN DOCUMENT LOADING 
       ==========================================================================*/
@@ -145,46 +240,54 @@
         sliderBgSetting();
         heroSlider();
         productSlider();
+        productDetailSlider();
+        productCategorySlider();
         updatesSlider();
         faqImagesSlider();
+        moreUpdateSlider();
 
         var windowHeight = $(window).outerHeight()
         var headerHeight = $('header').outerHeight();
-        $(".hero-slider-wrapper").css("height", (windowHeight - 200) + "px");
+        $(".hero-slider-wrapper").css("height", (windowHeight - headerHeight) + "px");
 
-        var cursor = new MouseFollower();
+        var cursor = new MouseFollower({
+            stateDetection: {
+                '-pointer': 'a, button, .btn',
+                '-hidden': 'iframe, input, select, textarea'
+            }
+        });
 
         new Textify({
-            el: '.slider-heading',
+            el: '.title-animation',
             animation: {
-                stagger: 0.05,
-                duration: 0.7,
+                stagger: 0.1,
+                duration: 1,
                 ease: 'expo.inOut',
-                //animateProps: {"rotate":60,"scale":0,"y":0}
+                animateProps: { "y": "-100%", "opacity": 0, "skewX": -45 }
             }
         }, gsap);
 
         new Textify({
-            el: '.heading h2',
+            el: '.headline-animation',
             animation: {
-            stagger: 0.05,
-            duration: 0.7,
-            ease: 'expo.inOut',
-            animateProps: {"rotate":60,"scale":0,"y":0}
+                stagger: 0.025,
+                duration: 0.7,
+                ease: 'expo.inOut',
+                animateProps: { "opacity": 0, "scale": 0 }
             }
-        },gsap);
+        }, gsap);
 
         new Textify({
-            el: 'p',
+            el: '.paragraph-animation',
             splitType: 'lines',
             largeText: true,
             animation: {
-            by: 'lines',
-            stagger: 0.075,
-            duration: 0.7,
-            ease: 'power2',
-            transformOrigin: 'left top',
-            animateProps: {"rotate":30,"opacity":0}
+                by: 'lines',
+                stagger: 0.1,
+                duration: 0.7,
+                ease: 'expo.inOut',
+                transformOrigin: 'left top',
+                animateProps: { "y": "-100%", "rotate": -30 }
             }
         }, gsap);
 

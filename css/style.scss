@@ -44,8 +44,9 @@
 
 body {
     color: #666;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'SKODA', sans-serif;
     line-height: normal;
+    overflow-x: hidden;
 }
 
 .section-box {
@@ -73,7 +74,7 @@ body {
     position: relative;
     text-transform: uppercase;
     transition: border 0.2s ease 0s;
-    min-width: 200px;
+    min-width: 150px;
     height: 50px;
     line-height: 50px;
 
@@ -129,6 +130,11 @@ body {
         transition: all 2s;
     }
 
+    &.dropdown-toggle::after {
+        margin-left: 0;
+        border-top: 0;
+    }
+
     &:hover {
         background: white;
         color: black;
@@ -146,7 +152,9 @@ body {
         }
     }
 
-    &:active {
+    &.active,
+    &.show,
+    &.btn:first-child:active {
         background-color: white !important;
         border-color: white !important;
         color: black !important;
@@ -162,6 +170,22 @@ body {
 
             .feather {
                 stroke-width: 1.5;
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
+
+    &.has-icon-left {
+        padding-left: 60px;
+
+        .left-icon {
+            position: absolute;
+            left: 20px;
+            top: -1px;
+
+            .feather {
+                stroke-width: 2;
                 height: 30px;
                 width: 30px;
             }
@@ -361,6 +385,166 @@ body {
     }
 }
 
+.dropdown {
+    .dropdown-menu {
+        a {
+            font-size: 18px;
+            padding: 10px;
+
+            &:hover {
+                background: linear-gradient(135deg,
+                        rgba(248, 13, 105, 1) 10%,
+                        rgba(139, 29, 165, 1) 20%,
+                        rgba(37, 124, 229, 1) 30%,
+                        rgba(225, 165, 42, 1) 40%,
+                        rgba(243, 101, 5, 1) 50%,
+                        rgba(63, 144, 16, 1) 60%,
+                        rgba(229, 27, 96, 1) 70%,
+                        rgba(128, 40, 173, 1) 80%,
+                        rgba(4, 149, 252, 1) 90%,
+                        rgba(4, 149, 252, 1) 100%);
+                ;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+}
+
+header {
+    //font-family: 'SKODA';
+
+    .header-right-top {
+        .search {
+            position: relative;
+
+            .search-control {
+                background-image: linear-gradient(#fff, #fff), linear-gradient(135deg,
+                        rgba(248, 13, 105, 1) 10%,
+                        rgba(139, 29, 165, 1) 20%,
+                        rgba(37, 124, 229, 1) 30%,
+                        rgba(225, 165, 42, 1) 40%,
+                        rgba(243, 101, 5, 1) 50%,
+                        rgba(63, 144, 16, 1) 60%,
+                        rgba(229, 27, 96, 1) 70%,
+                        rgba(128, 40, 173, 1) 80%,
+                        rgba(4, 149, 252, 1) 90%,
+                        rgba(4, 149, 252, 1) 100%);
+                background-clip: padding-box, border-box;
+                background-origin: border-box;
+                border-color: transparent;
+                border-width: 3px;
+                height: 56px;
+                font-size: 18px;
+
+                &::placeholder {
+                    color: #999;
+                }
+            }
+
+            .feather {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        .get-in-touch {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            color: #333;
+
+            .g-item {
+                display: flex;
+                align-items: center;
+                font-size: 20px;
+                margin-left: 50px;
+                position: relative;
+
+                .feather {
+                    margin-right: 15px;
+                }
+
+                &:first-child::after {
+                    background: #000;
+                    content: "";
+                    height: 25px;
+                    width: 1px;
+                    position: absolute;
+                    right: -25px;
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    .header-right-bottom {
+        display: flex;
+
+        .navbar {
+            margin-top: 20px;
+
+            .nav-item {
+                .nav-link {
+                    border: 3px solid rgba(0, 0, 0, 0);
+                    border-radius: 6px;
+                    color: #333;
+                    font-size: 18px;
+                    min-width: auto;
+                    height: 56px;
+                    line-height: 50px;
+                    padding: 1px 25px;
+                    text-transform: uppercase;
+                    transition: all .5s;
+
+                    .feather {
+                        margin-top: -5px;
+                        margin-right: 8px;
+                    }
+                }
+
+                &.active {
+                    .nav-link {
+                        background: linear-gradient(#fff, #fff) padding-box, linear-gradient(135deg,
+                                rgba(248, 13, 105, 1) 10%,
+                                rgba(139, 29, 165, 1) 20%,
+                                rgba(37, 124, 229, 1) 30%,
+                                rgba(225, 165, 42, 1) 40%,
+                                rgba(243, 101, 5, 1) 50%,
+                                rgba(63, 144, 16, 1) 60%,
+                                rgba(229, 27, 96, 1) 70%,
+                                rgba(128, 40, 173, 1) 80%,
+                                rgba(4, 149, 252, 1) 90%,
+                                rgba(4, 149, 252, 1) 100%) border-box;
+                        font-weight: 600;
+                    }
+                }
+
+                &:not(.active):hover {
+                    .nav-link {
+                        background: linear-gradient(135deg,
+                                rgba(248, 13, 105, 1) 10%,
+                                rgba(139, 29, 165, 1) 20%,
+                                rgba(37, 124, 229, 1) 30%,
+                                rgba(225, 165, 42, 1) 40%,
+                                rgba(243, 101, 5, 1) 50%,
+                                rgba(63, 144, 16, 1) 60%,
+                                rgba(229, 27, 96, 1) 70%,
+                                rgba(128, 40, 173, 1) 80%,
+                                rgba(4, 149, 252, 1) 90%,
+                                rgba(4, 149, 252, 1) 100%);
+                        ;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .heading {
     h2 {
         color: #000;
@@ -369,7 +553,7 @@ body {
         font-size: 35px;
         position: relative;
         padding-bottom: 8px;
-        margin-bottom: 25px !important;
+        margin-bottom: 20px !important;
         text-transform: uppercase;
 
         &::after {
@@ -440,6 +624,22 @@ body {
                         bottom: 0;
                         z-index: -2;
                     }
+
+                    &.slick-current {
+                        .slide-caption {
+                            h2 {
+                                animation: fadeInDown 1.5s 0.8s forwards;
+                            }
+
+                            h1 {
+                                animation: fadeInDown 1.5s 1.4s forwards;
+                            }
+
+                            .cta {
+                                animation: fadeInUp 1.5s 3s forwards;
+                            }
+                        }
+                    }
                 }
 
                 .slider-bg {
@@ -452,20 +652,27 @@ body {
 
                     h2 {
                         color: white;
-                        font-family: 'SKODA';
+                        //font-family: 'SKODA';
                         font-size: 40px;
                         font-weight: 600;
                         text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
                         letter-spacing: 2px;
+                        opacity: 0;
+
                     }
 
                     h1 {
                         color: white;
-                        font-family: 'SKODA';
+                        //font-family: 'SKODA';
                         font-size: 70px;
                         font-weight: 600;
                         text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
                         margin-bottom: 50px;
+                        opacity: 0;
+                    }
+
+                    .cta {
+                        opacity: 0;
                     }
                 }
             }
@@ -565,7 +772,7 @@ body {
         .widget {
             .btn {
                 cursor: auto;
-                font-family: 'SKODA';
+                //font-family: 'SKODA';
                 font-size: 18px;
                 text-transform: capitalize;
                 letter-spacing: 1px;
@@ -580,15 +787,32 @@ body {
                 list-style: none;
 
                 li {
-                    margin-bottom: 10px;
+                    margin-bottom: 15px;
 
                     a {
                         color: white;
-                        font-size: 15px;
+                        font-size: 16px;
                         text-decoration: none;
                     }
                 }
             }
+        }
+    }
+
+    .footer-standard {
+        background: radial-gradient(circle at 5% 100%, rgb(201 53 53) 0%, rgb(248 13 105) 22%, rgb(143 40 213) 22%, rgb(51 77 204) 25%, rgb(19, 30, 37) 25%, rgb(10, 20, 20) 66%);
+        padding: 50px 0;
+
+        .img-lg {
+            width: 300px;
+        }
+
+        .img-md {
+            width: 250px;
+        }
+
+        .img-sm {
+            width: 150px;
         }
     }
 
@@ -639,11 +863,11 @@ body {
     }
 
     .slick-prev {
-        left: -60px;
+        left: -66px;
     }
 
     .slick-next {
-        right: -60px;
+        right: -66px;
     }
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -713,7 +937,7 @@ body {
 
             .p-name {
                 color: white;
-                font-family: 'SKODA';
+                //font-family: 'SKODA';
                 font-size: 30px;
                 font-weight: 600;
                 line-height: 30px;
@@ -728,7 +952,7 @@ body {
 
                 .p-price {
                     color: white;
-                    font-family: 'SKODA';
+                    //font-family: 'SKODA';
                     font-size: 26px;
                 }
             }
@@ -752,6 +976,109 @@ body {
     }
 }
 
+.productDetail-slider {
+    margin-bottom: 50px;
+
+    .productDeatailImage-slider {
+        margin-bottom: 15px;
+
+        .slide {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 650px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .productDeatailThumb-slider {
+        padding: 0 70px;
+
+        .slide {
+            cursor: pointer;
+            height: 90px;
+            margin: 5px 10px;
+            position: relative;
+
+            img {
+                height: 100%;
+            }
+
+            &.is-active::after {
+                content: "";
+                background: #f80d69;
+                background: linear-gradient(135deg, rgb(248, 13, 105) 10%, rgb(139, 29, 165) 20%, rgb(37, 124, 229) 30%, rgb(225, 165, 42) 40%, rgb(243, 101, 5) 50%, rgb(63, 144, 16) 60%, rgb(229, 27, 96) 70%, rgb(128, 40, 173) 80%, rgb(4, 149, 252) 90%, rgb(4, 149, 252) 100%);
+                border-radius: 7px;
+                display: block;
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                width: calc(100% + 10px);
+                height: calc(100% + 10px);
+                z-index: -1;
+                border-radius: 23px;
+                opacity: 1;
+                transform: scale(1);
+                transition: all 2s;
+            }
+        }
+    }
+
+    .slick-prev {
+        left: 10px;
+        z-index: 1;
+    }
+
+    .slick-next {
+        right: 10px;
+        z-index: 1;
+    }
+}
+
+.productCategory-slider {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+
+    .slick-dots {
+
+        li {
+            margin: 0 15px;
+
+            button {
+                background-color: #ccc;
+                border: 2px solid #ccc;
+                border-radius: 50%;
+
+                &::before {
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: all 0.5s;
+                    font-size: 0;
+                }
+            }
+
+            &.slick-active {
+                button {
+                    background-color: #555;
+                    border: 2px solid #555;
+
+                    &::before {
+                        border: 1px solid #555;
+                        opacity: 1;
+                        top: -10px;
+                        left: -10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .faqSlider-thumbnail {
     .faqSlider-box {
         border-radius: 20px;
@@ -765,7 +1092,7 @@ body {
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
             padding: 25px;
-            padding-top: 100px;
+            padding-top: 50%;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -775,17 +1102,16 @@ body {
 
             .f-name {
                 color: white;
-                font-family: 'SKODA';
-                font-size: 24px;
+                //font-family: 'SKODA';
+                font-size: 26px;
                 font-weight: 600;
-                line-height: 24px;
                 letter-spacing: 1px;
                 margin-bottom: 10px;
             }
 
             .f-details {
                 color: #fff;
-                font-family: "SKODA";
+                //font-family: "SKODA";
                 font-size: 20px;
                 line-height: 20px;
                 letter-spacing: 1px;
@@ -825,7 +1151,7 @@ body {
         .f-info {
             .f-name {
                 color: #333;
-                font-family: 'SKODA';
+                //font-family: 'SKODA';
                 font-size: 30px;
                 font-weight: 600;
                 line-height: 30px;
@@ -860,15 +1186,16 @@ body {
                 border-bottom-right-radius: 20px;
                 padding: 25px 30px;
                 position: absolute;
-                bottom: 0;
+                bottom: -200px;
                 left: 0;
                 right: 0;
                 width: 100%;
                 z-index: 0;
+                transition: all 2s;
 
                 .u-name {
                     color: #fff;
-                    font-family: 'SKODA';
+                    //font-family: 'SKODA';
                     font-size: 28px;
                     line-height: 30px;
                     margin-bottom: 10px;
@@ -882,10 +1209,16 @@ body {
                     .u-location {
                         color: white;
                         font-size: 18px;
-                        font-family: "SKODA";
+                        //font-family: "SKODA";
                         letter-spacing: 1px;
                     }
                 }
+            }
+        }
+
+        &.slick-current {
+            .u-info {
+                bottom: 0;
             }
         }
     }
@@ -951,7 +1284,7 @@ body {
             .u-info {
                 .u-name {
                     color: #000;
-                    font-family: "SKODA";
+                    //font-family: "SKODA";
                     font-size: 26px;
                     font-weight: 600;
                     line-height: 26px;
@@ -960,7 +1293,7 @@ body {
 
                 .u-details {
                     color: #666666;
-                    font-family: "SKODA";
+                    //font-family: "SKODA";
                     font-size: 20px;
                     letter-spacing: 1px;
                     line-height: 20px;
@@ -1034,6 +1367,45 @@ body {
     }
 }
 
+.moreUpdates-slider {
+    .slick-dots {
+
+        li {
+            margin: 0 15px;
+
+            button {
+                background-color: #ccc;
+                border: 2px solid #ccc;
+                border-radius: 50%;
+
+                &::before {
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: all 0.5s;
+                    font-size: 0;
+                }
+            }
+
+            &.slick-active {
+                button {
+                    background-color: #555;
+                    border: 2px solid #555;
+
+                    &::before {
+                        border: 1px solid #555;
+                        opacity: 1;
+                        top: -10px;
+                        left: -10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .viewAllUpdate-btn {
     position: absolute;
     bottom: 0;
@@ -1055,10 +1427,19 @@ body {
     }
 
     .information-text {
-        color: #aaa;
+        color: #555;
         display: block;
-        font-size: 11px;
+        font-size: 12px;
         margin-bottom: 15px;
+    }
+
+    &::after {
+        content: url("../images/send.svg");
+        opacity: 0.1;
+        position: absolute;
+        left: -10px;
+        bottom: -20px;
+        z-index: -1;
     }
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -1095,20 +1476,20 @@ body {
             height: 60px;
             text-align: center;
             text-transform: uppercase;
+            letter-spacing: 1px;
             padding: 10px 15px;
 
-            .feather {
+            .icon {
                 width: 40px;
                 height: 40px;
-                margin-top: 0px;
-                stroke-width: 1.5px;
+                filter: invert(1);
                 margin-right: 10px;
             }
         }
 
         .card-body {
             display: inline;
-            font-family: 'SKODA';
+            //font-family: 'SKODA';
             padding: 20px;
         }
 
@@ -1246,11 +1627,11 @@ body {
     .contect-box {
         .i-title {
             color: #333;
-            font-family: 'SKODA';
+            //font-family: 'SKODA';
             font-size: 28px;
             font-weight: 600;
             line-height: 35px;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
 
         .i-details p {
@@ -1281,9 +1662,9 @@ body {
     transition: all 0.5s;
 
     .img-box {
-        img {
-            border-radius: 20px;
-        }
+        background-size: cover;
+        background-position: center center;
+        border-radius: 20px;
     }
 
     .contect-box {
@@ -1291,7 +1672,7 @@ body {
 
         .u-title {
             color: #333;
-            font-family: 'SKODA';
+            //font-family: 'SKODA';
             font-size: 34px;
             font-weight: 600;
             line-height: 40px;
@@ -1412,9 +1793,9 @@ body {
 
 .page-title {
     .background-container {
-        background: url(https://placehold.co/2000x350/00645b/02524b) center center/cover no-repeat local;
+        background: url("../images/parallax/banner-1.jpg") center center/cover no-repeat local;
         color: var(--theme-base-white);
-        height: 400px;
+        height: 350px;
         position: relative;
         display: flex;
         align-items: center;
@@ -1431,7 +1812,7 @@ body {
 
         .p-container {
             color: white;
-            font-family: 'SKODA';
+            //font-family: 'SKODA';
             text-align: center;
 
             .p-mainTitle {
@@ -1593,7 +1974,8 @@ body {
 
     &::before {
         transform: scale(0.5);
-        background: linear-gradient(315deg, #FF5722, #673AB7);
+        background: linear-gradient(140.54deg, rgb(96, 141, 0) 0%, rgb(211, 0, 0) 72.37%), linear-gradient(58.72deg, rgb(0, 41, 255) 0%, rgb(143, 255, 0) 100%), radial-gradient(100% 164.72% at 100% 100%, rgb(97, 0, 255) 0%, rgb(0, 255, 87) 100%), radial-gradient(100% 148.07% at 0% 0%, rgb(255, 245, 0) 0%, rgb(81, 213, 0) 100%);
+        background-blend-mode: color-dodge, overlay, difference, normal;
     }
 
     &.-hidden {
@@ -1615,6 +1997,10 @@ body {
     &.-text {
         &::after {
             transform: scale(0);
+        }
+
+        &.-pointer .mf-cursor-text {
+            font-size: 0;
         }
     }
 }
