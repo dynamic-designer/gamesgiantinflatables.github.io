@@ -61,6 +61,10 @@ body {
     &.section-highlight {
         background-color: #f7f7f7;
     }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        padding: 25px 0;
+    }
 }
 
 .bring-up {
@@ -1102,6 +1106,7 @@ header {
 
             img {
                 width: 100%;
+                height: 100%;
             }
         }
     }
@@ -1148,6 +1153,36 @@ header {
         right: 10px;
         z-index: 1;
     }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        margin-bottom: 30px;
+
+        .productDeatailImage-slider {
+            margin-bottom: 15px;
+
+            .slide {
+                height: 450px;
+            }
+        }
+
+        .productDeatailThumb-slider {
+            .slide {
+                height: 60px;
+
+                img {
+                    border-radius: 12px;
+                }
+
+                &.is-active::after {
+                    top: -3px;
+                    left: -3px;
+                    width: calc(100% + 6px);
+                    height: calc(100% + 6px);
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
 }
 
 .productCategory-slider {
@@ -1187,6 +1222,34 @@ header {
                         left: -10px;
                     }
                 }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .slick-dots {
+            bottom: -15px;
+
+            li {
+                margin: 0 10px;
+
+                button::before {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                &.slick-active {
+                    button::before {
+                        top: -5px;
+                        left: -5px;
+                    }
+                }
+            }
+
+            li,
+            li button {
+                width: 14px;
+                height: 14px;
             }
         }
     }
@@ -1269,6 +1332,18 @@ header {
                 font-weight: 600;
                 line-height: 30px;
                 margin: 15px 0 30px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .faq-box {
+            .f-info {
+                .f-name {
+                    font-size: 20px;
+                    line-height: 20px;
+                    margin: 15px 0;
+                }
             }
         }
     }
@@ -1514,6 +1589,34 @@ header {
                         left: -10px;
                     }
                 }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .slick-dots {
+            bottom: -15px;
+
+            li {
+                margin: 0 10px;
+
+                button::before {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                &.slick-active {
+                    button::before {
+                        top: -5px;
+                        left: -5px;
+                    }
+                }
+            }
+
+            li,
+            li button {
+                width: 14px;
+                height: 14px;
             }
         }
     }
@@ -1890,16 +1993,28 @@ header {
         .page-item {
             margin: 0 5px;
 
+            &.go-prev .page-link,
+            &.go-next .page-link {
+                height: 26px;
+                width: 26px;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
             &:not(.go-next):not(.go-prev):not(.disabled) {
                 .page-link {
-                    width: 40px;
-                    height: 40px;
+                    border-radius: 7px;
+                    width: 36px;
+                    height: 36px;
                     padding: 0;
                 }
             }
 
             .page-link {
-                font-size: 16px;
+                font-size: 14px;
             }
 
         }
@@ -1994,15 +2109,17 @@ header {
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
         .background-container {
-            height: 300px;
+            height: 250px;
 
             .p-container {
                 .p-mainTitle {
-                    font-size: 46px;
+                    font-size: 40px;
+                    letter-spacing: 2px;
+                    margin-bottom: 0;
                 }
 
                 .p-subTitle {
-                    font-size: 26px;
+                    font-size: 20px;
                 }
             }
         }
@@ -2015,12 +2132,18 @@ header {
                         padding: 6px 15px;
 
                         .feather {
-                            width: 24px;
-                            height: 24px;
-                            stroke-width: 1.5;
+                            width: 20px;
+                            height: 20px;
+                            stroke-width: 2;
+                            margin-top: -3px;
+                            margin-right: 5px;
                         }
                     }
                 }
+            }
+
+            .btn-primary {
+                min-width: auto;
             }
         }
     }
@@ -2135,6 +2258,16 @@ header {
         &.-text {
             &::before {
                 transform: scale(1.4);
+            }
+
+            &.-active {
+                &:before {
+                    transform: scale(0.15);
+                }
+
+                .mf-cursor-text {
+                    font-size: 0px;
+                }
             }
 
             .mf-cursor-text {
