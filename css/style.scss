@@ -49,6 +49,12 @@ body {
     overflow-x: hidden;
 }
 
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .section-box {
     padding: 30px 0;
 
@@ -203,9 +209,9 @@ body {
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
         font-size: 14px;
-        padding: 1px 14px;
-        height: 36px;
-        line-height: 35px;
+        padding: 0px 14px;
+        height: 34px;
+        line-height: 34px;
 
         &.has-icon {
             padding-right: 45px;
@@ -216,6 +222,26 @@ body {
                 .feather {
                     height: 26px;
                     width: 26px;
+                }
+            }
+        }
+
+        &.has-icon-left {
+            padding-left: 45px;
+
+            .left-icon {
+                left: 13px;
+
+                .feather {
+                    height: 26px;
+                    width: 26px;
+                }
+
+            }
+
+            .icon {
+                img {
+                    height: 27px;
                 }
             }
         }
@@ -409,10 +435,21 @@ body {
             }
         }
     }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .dropdown-menu {
+            a {
+                font-size: 14px;
+                padding: 7px 10px;
+            }
+        }
+    }
 }
 
 header {
-    //font-family: 'SKODA';
+    .navbar-brand img {
+        height: 125px;
+    }
 
     .header-right-top {
         .search {
@@ -543,6 +580,54 @@ header {
             }
         }
     }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        .navbar-brand img {
+            height: 100px;
+        }
+
+        .header-right-top {
+            .search {
+                .search-control {
+                    height: 40px;
+                    font-size: 14px;
+                }
+            }
+
+            .get-in-touch {
+                .g-item {
+                    font-size: 16px;
+                    margin-left: 40px;
+
+                    .feather {
+                        height: 20px;
+                        width: 20px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        .header-right-bottom {
+            .navbar {
+                .nav-item {
+                    .nav-link {
+                        font-size: 14px;
+                        font-weight: 600;
+                        height: 40px;
+                        line-height: 38px;
+                        padding: 0px 15px;
+
+                        .feather {
+                            margin-top: -6px;
+                            margin-right: 2px;
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .heading {
@@ -586,12 +671,14 @@ header {
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
         h2 {
-            font-size: 26px;
+            font-size: 28px;
+            padding-bottom: 5px;
+            margin-bottom: 12px !important;
         }
 
         &.heading-large {
             h2 {
-                font-size: 34px;
+                font-size: 36px;
             }
         }
     }
@@ -820,7 +907,7 @@ header {
         .footer-sitemap {
             .widget {
                 .btn {
-                    font-size: 16px;
+                    font-size: 14px;
                     letter-spacing: 0px;
                     margin-bottom: 15px;
                     height: 32px;
@@ -836,6 +923,30 @@ header {
                         }
                     }
                 }
+            }
+        }
+
+        .footer-standard {
+            padding: 25px 0;
+
+            h4 {
+                font-size: 16px;
+            }
+
+            h5 {
+                font-size: 14px;
+            }
+
+            .img-lg {
+                width: 250px;
+            }
+
+            .img-md {
+                width: 160px;
+            }
+
+            .img-sm {
+                width: 120px;
             }
         }
     }
@@ -879,6 +990,7 @@ header {
                     width: 26px;
                     height: 26px;
                     stroke-width: 1.5px;
+                    margin-top: -2px;
                 }
             }
         }
@@ -943,6 +1055,7 @@ header {
                 line-height: 30px;
                 letter-spacing: 2px;
                 margin-bottom: 20px;
+                @extend .ellipsis
             }
 
             .p-footer {
@@ -1520,9 +1633,11 @@ header {
         .card {
             .card-header {
                 font-size: 20px;
+                font-weight: normal;
                 height: 46px;
+                letter-spacing: 0;
 
-                .feather {
+                .icon {
                     width: 28px;
                     height: 28px;
                 }
@@ -2001,6 +2116,37 @@ header {
 
         &.-pointer .mf-cursor-text {
             font-size: 0;
+        }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        &::after {
+            width: 40px;
+            height: 40px;
+            top: -20px;
+            left: -20px;
+            transform: scale(0.75);
+        }
+
+        &::before {
+            transform: scale(0.4);
+        }
+
+        &.-text {
+            &::before {
+                transform: scale(1.4);
+            }
+
+            .mf-cursor-text {
+                font-size: 12px;
+                line-height: normal;
+            }
+        }
+
+        &.-pointer {
+            &::before {
+                transform: scale(0.15);
+            }
         }
     }
 }
