@@ -257,6 +257,11 @@
             }
         });
 
+        backToTopBtn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, '100');
+        });
+
         new Textify({
             el: '.title-animation',
             animation: {
@@ -293,6 +298,9 @@
 
         //Animate On Scroll Init
         AOS.init();
+
+        //WOW Animate On Scroll Init
+        new WOW().init();
 
         //Feather Icon Init
         feather.replace();
