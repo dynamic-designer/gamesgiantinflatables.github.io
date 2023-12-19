@@ -155,6 +155,7 @@ textarea.form-control {
 .btn-primary {
     background: white;
     border: 0 none;
+    border-radius: 5px;
     color: #1a1a1a;
     display: inline-block;
     font-family: 'Poppins', sans-serif;
@@ -183,23 +184,21 @@ textarea.form-control {
                 rgba(128, 40, 173, 1) 80%,
                 rgba(4, 149, 252, 1) 90%,
                 rgba(4, 149, 252, 1) 100%);
-        border-radius: calc(6px + 1px);
+        border-radius: 8px;
         display: block;
         position: absolute;
-        top: -3%;
-        left: -3%;
-        width: 106%;
-        height: 106%;
+        top: -3px;
+        left: -3px;
+        width: calc(100% + 6px);
+        height: calc(100% + 6px);
         z-index: -1;
         filter: blur(6px);
         opacity: 0.6;
-        transform: scale(0.9);
-        transition: all 2s;
     }
 
     &::after {
         content: "";
-        border-radius: calc(6px + 1px);
+        border-radius: 8px;
         background-image: linear-gradient(135deg,
                 rgba(248, 13, 105, 1) 10%,
                 rgba(139, 29, 165, 1) 20%,
@@ -218,7 +217,6 @@ textarea.form-control {
         width: calc(100% + 6px);
         height: calc(100% + 6px);
         z-index: -1;
-        transition: all 2s;
     }
 
     &.dropdown-toggle::after {
@@ -231,10 +229,10 @@ textarea.form-control {
         color: black;
 
         &::before {
-            top: -10%;
-            left: -10%;
-            width: 120%;
-            height: 120%;
+            top: -5px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
             animation: animatedGradient 2s infinite;
         }
 
@@ -289,10 +287,23 @@ textarea.form-control {
     &.btn-sm {
         font-size: 16px;
         font-weight: 600;
-        height: 30px;
-        line-height: 30px;
-        padding: 1px 10px;
+        height: 40px;
+        line-height: 40px;
+        padding: 1px 15px;
         min-width: auto;
+        .feather {
+            position: relative;
+            left: -3px;
+            top: -1px;
+        }
+    }
+
+    &.has-pulseEffect {
+        &::before {
+            animation-name: pulse;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
     }
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -499,6 +510,23 @@ textarea.form-control {
     }
 }
 
+@keyframes pulse {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05)
+    }
+
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+}
+
 .dropdown {
     .dropdown-menu {
         a {
@@ -518,7 +546,7 @@ textarea.form-control {
                         rgba(4, 149, 252, 1) 90%,
                         rgba(4, 149, 252, 1) 100%);
                 ;
-                -webkit-background-clip: text;
+                background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
         }
@@ -557,6 +585,7 @@ header {
                         rgba(4, 149, 252, 1) 100%);
                 background-clip: padding-box, border-box;
                 background-origin: border-box;
+                border-radius: 8px;
                 border-color: transparent;
                 border-width: 3px;
                 height: 56px;
@@ -614,19 +643,20 @@ header {
             .nav-item {
                 .nav-link {
                     border: 3px solid rgba(0, 0, 0, 0);
-                    border-radius: 6px;
+                    border-radius: 8px;
                     color: #333;
                     font-size: 18px;
                     min-width: auto;
                     height: 56px;
-                    line-height: 50px;
-                    padding: 1px 25px;
+                    line-height: 52px;
+                    margin: 0 5px;
+                    padding: 1px 20px;
                     text-transform: uppercase;
-                    transition: all .5s;
+                    transition: all .2s;
 
                     .feather {
-                        margin-top: -5px;
-                        margin-right: 8px;
+                        margin-top: -7px;
+                        margin-right: 12px;
                     }
                 }
 
@@ -647,22 +677,45 @@ header {
                     }
                 }
 
-                &:not(.active):hover {
+                &:nth-child(1):not(.active):hover {
                     .nav-link {
-                        background: linear-gradient(135deg,
-                                rgba(248, 13, 105, 1) 10%,
-                                rgba(139, 29, 165, 1) 20%,
-                                rgba(37, 124, 229, 1) 30%,
-                                rgba(225, 165, 42, 1) 40%,
-                                rgba(243, 101, 5, 1) 50%,
-                                rgba(63, 144, 16, 1) 60%,
-                                rgba(229, 27, 96, 1) 70%,
-                                rgba(128, 40, 173, 1) 80%,
-                                rgba(4, 149, 252, 1) 90%,
-                                rgba(4, 149, 252, 1) 100%);
-                        ;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
+                        background-color: #f80d69;
+                        color: white;
+                    }
+                }
+
+                &:nth-child(2):not(.active):hover {
+                    .nav-link {
+                        background-color: #8820a7;
+                        color: white;
+                    }
+                }
+
+                &:nth-child(3):not(.active):hover {
+                    .nav-link {
+                        background-color: #2b7ddf;
+                        color: white;
+                    }
+                }
+
+                &:nth-child(4):not(.active):hover {
+                    .nav-link {
+                        background-color: #e1a52a;
+                        color: white;
+                    }
+                }
+
+                &:nth-child(5):not(.active):hover {
+                    .nav-link {
+                        background-color: #f36505;
+                        color: white;
+                    }
+                }
+
+                &:nth-child(6):not(.active):hover {
+                    .nav-link {
+                        background-color: #3f9010;
+                        color: white;
                     }
                 }
             }
@@ -2293,6 +2346,10 @@ header {
 }
 
 .mf-cursor {
+    top: 50px;
+    left: 45px;
+    z-index: 99999;
+
     &::after {
         content: "";
         width: 48px;
