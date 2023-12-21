@@ -279,10 +279,16 @@
 
         var sticky = $('header'),
             scroll = $(window).scrollTop(),
+            headerHeight = $("header").outerHeight(),
             windowHeight = $(window).outerHeight();
 
-        if (scroll >= windowHeight) sticky.addClass('position-fixed');
-        else sticky.removeClass('position-fixed');
+        if (scroll >= windowHeight){
+            $("body").css("padding-top", headerHeight+"px");
+            sticky.addClass('position-fixed');
+        } else {
+            $("body").css("padding-top", "0px");
+            sticky.removeClass('position-fixed');
+        };
 
         if ($(window).scrollTop() > 300) {
             backToTopBtn.addClass("show");
