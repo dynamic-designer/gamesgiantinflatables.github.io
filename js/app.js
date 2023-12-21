@@ -43,7 +43,7 @@
     function faqImagesSlider() {
         if ($(".faqImages-slider").length) {
             $(".faqImages-slider").slick({
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 6000,
                 pauseOnHover: true,
                 infinite: true,
@@ -85,7 +85,7 @@
                 slidesToShow: 3,
                 dots: false,
                 arrows: true,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 4000,
                 prevArrow:
                     '<div class="slick-prev"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
@@ -102,7 +102,7 @@
                 slidesToShow: 3,
                 dots: true,
                 arrows: true,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 4000,
                 prevArrow:
                     '<div class="slick-prev"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
@@ -117,7 +117,7 @@
             $(".updateVertical-slider").slick({
                 slidesToShow: 2,
                 slidesToScroll: 1,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 4000,
                 infinite: true,
                 vertical: true,
@@ -133,7 +133,7 @@
             $(".updateHorizontal-slider").slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 4000,
                 infinite: true,
                 asNavFor: ".updateVertical-slider",
@@ -164,7 +164,7 @@
                 infinite: false,
                 dots: false,
                 arrows: true,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 4000,
                 prevArrow:
                     '<div class="slick-prev slick-btn"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
@@ -182,7 +182,7 @@
                     slidesToShow: 7,
                     dots: false,
                     arrows: true,
-                    autoplay: false,
+                    autoplay: true,
                     autoplaySpeed: 4000,
                     prevArrow:
                         '<div class="slick-prev slick-btn"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
@@ -221,7 +221,7 @@
                 slidesToShow: 1,
                 dots: true,
                 arrows: true,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 4000,
                 prevArrow:
                     '<div class="slick-prev"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
@@ -262,45 +262,10 @@
             $('html, body').animate({ scrollTop: 0 }, '100');
         });
 
-        new Textify({
-            el: '.title-animation',
-            animation: {
-                stagger: 0.1,
-                duration: 1,
-                ease: 'expo.inOut',
-                animateProps: { "y": "-100%", "opacity": 0, "skewX": -45 }
-            }
-        }, gsap);
-
-        new Textify({
-            el: '.headline-animation',
-            animation: {
-                stagger: 0.025,
-                duration: 0.7,
-                ease: 'expo.inOut',
-                animateProps: { "opacity": 0, "scale": 0 }
-            }
-        }, gsap);
-
-        new Textify({
-            el: '.paragraph-animation',
-            splitType: 'lines',
-            largeText: true,
-            animation: {
-                by: 'lines',
-                stagger: 0.1,
-                duration: 0.7,
-                ease: 'expo.inOut',
-                transformOrigin: 'left top',
-                animateProps: { "y": "-100%", "rotate": -30 }
-            }
-        }, gsap);
-
-        //Animate On Scroll Init
-        AOS.init();
-
-        //WOW Animate On Scroll Init
-        new WOW().init();
+        var enqueryBoxHeight = $("#enqueryBox").outerHeight();
+        if (window.matchMedia('(min-width: 1200px)').matches) {
+            $(".aboutUsBox-section").find(".img-box > img").css("height", enqueryBoxHeight+"px");
+        }
 
         //Feather Icon Init
         feather.replace();
@@ -311,6 +276,13 @@
       ==========================================================================*/
     $(window).on("scroll", function () {
         bgParallax();
+
+        var sticky = $('header'),
+            scroll = $(window).scrollTop(),
+            windowHeight = $(window).outerHeight();
+
+        if (scroll >= windowHeight) sticky.addClass('position-fixed');
+        else sticky.removeClass('position-fixed');
 
         if ($(window).scrollTop() > 300) {
             backToTopBtn.addClass("show");
