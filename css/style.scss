@@ -194,6 +194,7 @@ textarea.form-control {
         z-index: -1;
         filter: blur(6px);
         opacity: 0.6;
+        transition: all 0.5s;
     }
 
     &::after {
@@ -217,6 +218,7 @@ textarea.form-control {
         width: calc(100% + 6px);
         height: calc(100% + 6px);
         z-index: -1;
+        transition: all 0.5s;
     }
 
     &.dropdown-toggle::after {
@@ -233,11 +235,11 @@ textarea.form-control {
             left: -5px;
             width: calc(100% + 10px);
             height: calc(100% + 10px);
-            animation: animatedGradient 2s infinite;
+            animation: animatedGradient 4s infinite;
         }
 
         &::after {
-            animation: animatedGradient 2s infinite;
+            animation: animatedGradient 4s infinite;
         }
     }
 
@@ -255,9 +257,9 @@ textarea.form-control {
     &.btn-sm {
         font-size: 16px;
         font-weight: 600;
-        height: 40px;
-        line-height: 40px;
-        padding: 1px 15px;
+        height: 44px;
+        line-height: 44px;
+        padding: 1px 20px;
         min-width: auto;
 
         .feather {
@@ -301,9 +303,7 @@ textarea.form-control {
 
     &.has-pulseEffect {
         &::before {
-            animation-name: pulse;
-            //animation-timing-function: ease-in-out;
-            animation-iteration-count: infinite;
+            animation: pulseEffect 2s infinite;
         }
     }
 
@@ -320,8 +320,8 @@ textarea.form-control {
                 right: 13px;
 
                 .feather {
-                    height: 26px;
-                    width: 26px;
+                    height: 24px;
+                    width: 24px;
                 }
             }
         }
@@ -332,9 +332,10 @@ textarea.form-control {
             .left-icon {
                 left: 13px;
 
-                .feather {
-                    height: 26px;
-                    width: 26px;
+                .feather,
+                img {
+                    height: 24px;
+                    width: 24px;
                 }
             }
 
@@ -347,10 +348,35 @@ textarea.form-control {
 
         &.btn-sm {
             font-size: 13px;
-            height: 24px;
-            line-height: 24px;
+            height: 30px;
+            line-height: 30px;
+            padding: 1px 10px;
+
+            .feather {
+                left: -2px;
+            }
         }
     }
+}
+
+@keyframes pulseEffect {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.05);
+        height: calc(100% + 12px);
+        top: -6px;
+        opacity: 0.8;
+    }
+
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
 }
 
 @keyframes animatedGradient {
@@ -566,7 +592,7 @@ header {
     transition: all 0.5s;
 
     .navbar-brand img {
-        height: 125px;
+        height: 150px;
     }
 
     .header-right-top {
@@ -652,8 +678,8 @@ header {
                     min-width: auto;
                     height: 56px;
                     line-height: 50px;
-                    margin: 0 5px;
-                    padding: 1px 20px;
+                    margin: 0 30px 0 0;
+                    padding: 1px 20px 1px 18px;
                     text-transform: uppercase;
                     transition: all 0.2s;
 
@@ -769,12 +795,14 @@ header {
                         font-weight: 600;
                         height: 40px;
                         line-height: 38px;
-                        padding: 0px 15px;
+                        padding: 0px 14px 0px 12px;
+                        margin: 0 10px 0 0;
 
                         .feather {
                             margin-top: -6px;
-                            margin-right: 2px;
+                            margin-right: 5px;
                             width: 20px;
+                            height: 20px;
                         }
                     }
                 }
@@ -792,6 +820,7 @@ header {
         position: relative;
         padding-bottom: 8px;
         margin-bottom: 20px !important;
+        margin-left: -2px;
         text-transform: uppercase;
 
         &::after {
@@ -804,7 +833,7 @@ header {
                     rgba(250, 122, 38, 1) 100%);
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 2px;
             height: 4px;
             width: 100%;
         }
@@ -813,7 +842,7 @@ header {
             content: "";
             background: linear-gradient(90deg, #ffffff00 0%, #3bedff 51%, #ffffff00);
             position: absolute;
-            left: 0;
+            left: 2px;
             width: 100%;
             height: 4px;
             bottom: 0;
@@ -824,6 +853,11 @@ header {
         &:hover::before {
             animation: headingBorder 5s infinite;
             opacity: 1;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
         }
     }
 
@@ -1223,6 +1257,7 @@ header {
 .productSlider-thumbnail {
     .productSlider-box {
         border-radius: 20px;
+        cursor: pointer;
         overflow: hidden;
         position: relative;
 
@@ -1266,10 +1301,12 @@ header {
     }
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
+
         .productSlider-box {
             .p-info {
                 .p-name {
                     font-size: 20px;
+                    margin-bottom: 10px
                 }
 
                 .p-footer {
@@ -1456,6 +1493,7 @@ header {
 .faqSlider-thumbnail {
     .faqSlider-box {
         border-radius: 20px;
+        cursor: pointer;
         overflow: hidden;
         position: relative;
 
@@ -1518,6 +1556,7 @@ header {
     .faq-box {
         img {
             border-radius: 20px;
+            cursor: pointer;
         }
 
         .f-info {
@@ -1561,6 +1600,7 @@ header {
     .updateHorizontalSlider-thumbnail {
         .updateHorizontalSlider-box {
             border-radius: 20px;
+            cursor: pointer;
             overflow: hidden;
             position: relative;
 
@@ -1983,9 +2023,11 @@ header {
         z-index: 1;
 
         .p-title {
+            color: white;
             font-family: "Ageta";
             font-size: 50px;
             margin-bottom: 0px;
+            text-decoration: none;
             text-transform: uppercase;
         }
 
@@ -2051,9 +2093,24 @@ header {
             margin-bottom: 15px;
         }
 
-        .i-details p {
-            font-size: 18px;
-            line-height: 28px;
+        .i-details {
+            overflow: hidden;
+            position: relative;
+
+            &:after {
+                content: "";
+                background: linear-gradient(0deg, #f7f7f7, rgba(247, 247, 247, 0.7), transparent);
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                width: 100%;
+                height: 30px;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 28px;
+            }
         }
 
         .a-btn {
@@ -2233,7 +2290,7 @@ header {
     .background-container {
         background: url("../images/parallax/banner-1.jpg") center center/cover no-repeat local;
         color: var(--theme-base-white);
-        height: 400px;
+        height: 500px;
         position: relative;
         display: flex;
         align-items: center;
@@ -2358,7 +2415,7 @@ header {
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
         .background-container {
-            height: 250px;
+            height: 400px;
 
             .p-container {
                 .p-mainTitle {
@@ -2374,25 +2431,29 @@ header {
         }
 
         .breadcrumb-container {
-            .breadcrumb {
-                li {
-                    a {
-                        font-size: 14px;
-                        padding: 6px 15px;
+            .breadcrumb-box {
+                padding: 5px;
 
-                        .feather {
-                            width: 20px;
-                            height: 20px;
-                            stroke-width: 2;
-                            margin-top: -3px;
-                            margin-right: 5px;
+                .breadcrumb {
+                    li {
+                        a {
+                            font-size: 14px;
+                            padding: 6px 15px;
+
+                            .feather {
+                                width: 20px;
+                                height: 20px;
+                                stroke-width: 2;
+                                margin-top: -3px;
+                                margin-right: 5px;
+                            }
                         }
                     }
                 }
-            }
 
-            .btn-primary {
-                min-width: auto;
+                .btn-primary {
+                    min-width: auto;
+                }
             }
         }
     }
@@ -2546,6 +2607,7 @@ header {
 
 .modal {
     .modal-dialog {
+
         .modal-content {
             border-radius: 20px;
         }
@@ -2556,4 +2618,8 @@ header {
             max-width: 400px;
         }
     }
+}
+
+.modal-backdrop {
+    opacity: 0.75 !important;
 }

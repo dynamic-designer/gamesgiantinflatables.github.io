@@ -9,7 +9,7 @@
     <meta name="author" content="themexriver">
 
     <!-- Page Title -->
-    <title>Industrial Inflatables :: Any Size Any Shape</title>
+    <title>Games Giant Inflatables :: Any Size Any Shape</title>
 
     <!-- Favicon and Touch Icons -->
     <link href="images/favicon/favicon.png" rel="shortcut icon" type="image/png">
@@ -36,13 +36,13 @@
 
     <header>
         <div class="container-fluid">
-            <div class="row py-3">
-                <div class="col-4">
+            <div class="row">
+                <div class="col-4 pt-2">
                     <a class="navbar-brand" href="index.html">
-                        <img src="https://www.logodesign.net/logo-new/red-and-yellow-abstract-shrimp-8339ld.png" />
+                        <img src="images/logo.png" />
                     </a>
                 </div>
-                <div class="col-8">
+                <div class="col-8 py-3">
                     <div class="header-right-top">
                         <div class="row align-items-center">
                             <div class="col-5">
@@ -74,10 +74,11 @@
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                                <ul class="navbar-nav ms-auto">
+                                <ul class="navbar-nav me-auto">
                                     <li class="nav-item">
                                         <a class="nav-link" aria-current="page" href="index.html">
-                                            Home</a>
+                                            <i data-feather="home"></i>Home
+                                        </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="about.html">About</a>
@@ -97,7 +98,7 @@
                                 </ul>
                             </div>
                             <div class="bring-up ms-3">
-                                <button type="button" class="btn btn-primary has-icon has-icon-left"
+                                <button type="button" class="btn btn-primary has-icon has-icon-left has-pulseEffect"
                                     data-bs-toggle="modal" data-bs-target="#easyToConnectPopup">
                                     <span class="left-icon">
                                         <img src="images/send.svg" height="28" />
@@ -130,7 +131,7 @@
             <div class="container container-small">
                 <div class="row">
                     <div class="col col-xs-12">
-                        <div class="breadcrumb-box d-flex align-items-center justify-content-between">
+                        <div class="breadcrumb-box d-flex align-items-center justify-content-between wow tada">
                             <ol class="breadcrumb m-0">
                                 <li><a href="index.html"><i data-feather="home"></i> Home</a></li>
                                 <li><a class="is-active"><i data-feather="home"></i> FAQs</a></li>
@@ -149,7 +150,9 @@
     <section class="section-box pt-0">
         <div class="container">
             <div class="heading heading-large">
-                <h2>FAQS</h2>
+                <h2 class="wow rubberBand" data-wow-duration="1s" data-wow-delay="0s">
+                    <a href="faqs.html">FAQS</a>
+                </h2>
             </div>
             <div class="row has-enqueryBox">
                 <div class="col-md-8 is-fluidBox">
@@ -157,17 +160,18 @@
                         <div class="col-md-12">
                             <div class="information-box">
                                 <div class="contect-box bring-up">
-                                    <div class="i-title">Lorem Ipsum is simply dummy text of the printing and
+                                    <div class="i-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0s">Lorem Ipsum is simply dummy text of the printing and
                                         typesetting industry has been the industry's standard dummy text</div>
                                 </div>
-                                <div class="img-box">
+                                <div class="img-box wow bounceInLeft" data-wow-duration="0.5s" data-wow-delay="0s">
                                     <div class="faqImages-slider">
                                         <img src="https://placehold.co/1500x750/00645b/02524b" class="img-fluid mb-4" />
                                         <img src="https://placehold.co/1500x750/673ab7/481f91" class="img-fluid mb-4" />
                                         <img src="https://placehold.co/1500x750/795548/5a3a2e" class="img-fluid mb-4" />
                                     </div>
                                 </div>
-                                <div class="contect-box bring-up">
+                                <div class="contect-box bring-up wow zoomIn" data-wow-duration="1s"
+                                data-wow-delay="0.1s">
                                     <div class="i-title text-uppercase">Answer</div>
                                     <div class="i-details">
                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has
@@ -222,7 +226,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 is-enqueryBox">
-                    <div class="info-block h-auto">
+                    <div class="info-block h-auto wow bounceInRight" data-wow-duration="0.5s" data-wow-delay="0s">
                         <div class="card card-red">
                             <div class="card-header">
                                 <img class="icon" src="images/send.svg" />
@@ -286,13 +290,15 @@
     <section class="section-box pb-0">
         <div class="container">
             <div class="heading heading-large">
-                <h2>More FAQS</h2>
+                <h2 class="wow rubberBand" data-wow-duration="1s" data-wow-delay="0s">
+                    <a href="faqs.html">More FAQS</a>
+                </h2>
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="faq-thumbnail" data-cursor-text="View Answer">
+                    <div class="faq-thumbnail wow swing" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="faq-box">
-                            <img src="images/faqs/faq-1.jpg" class="img-fluid" />
+                            <img src="images/faqs/faq-1.jpg" class="img-fluid" data-cursor-text="View Answer" onclick="window.location.href = '/faq-detail.html'" />
                             <div class="f-info">
                                 <div class="f-name">Lorem Ipsum is simply dummy text of the printing
                                     and typesetting
@@ -305,9 +311,9 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="faq-thumbnail" data-cursor-text="View Answer">
+                    <div class="faq-thumbnail wow swing" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="faq-box">
-                            <img src="images/faqs/faq-2.jpg" class="img-fluid" />
+                            <img src="images/faqs/faq-2.jpg" class="img-fluid" data-cursor-text="View Answer" onclick="window.location.href = '/faq-detail.html'" />
                             <div class="f-info">
                                 <div class="f-name">Lorem Ipsum is simply dummy text of the printing
                                     and typesetting
@@ -320,9 +326,9 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="faq-thumbnail" data-cursor-text="View Answer">
+                    <div class="faq-thumbnail wow swing" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="faq-box">
-                            <img src="images/faqs/faq-3.jpg" class="img-fluid" />
+                            <img src="images/faqs/faq-3.jpg" class="img-fluid" data-cursor-text="View Answer" onclick="window.location.href = '/faq-detail.html'" />
                             <div class="f-info">
                                 <div class="f-name">Lorem Ipsum is simply dummy text of the printing
                                     and typesetting
@@ -338,13 +344,42 @@
         </div>
     </section>
 
+    <section class="section-box parallax p-0 wow flipInX" data-wow-duration="1s" data-wow-delay="0.1s"
+        data-bg-image="images/parallax/banner-2.jpg">
+        <div class="container">
+            <div class="ourProducts-banner">
+                <a href="product-category.html" class="p-title">Our Products</a>
+                <div class="p-subTitle">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry</div>
+                <div class="p-button">
+                    <a href="product-category.html" class="btn btn-primary has-icon">
+                        Explore All Products
+                        <span class="icon">
+                            <img src="images/click.svg" height="30">
+                        </span>
+                    </a>
+                </div>
+                <div class="p-contact">
+                    <div class="d-flex align-items-center"><i data-feather="phone-call"></i> +91 94296
+                        13531
+                    </div>
+                    <div class="mx-3">|</div>
+                    <div class="d-flex align-items-center"><i data-feather="mail"></i>
+                        sales@giantinflatables.games</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section-box">
         <div class="container">
             <div class="d-flex">
                 <div class="heading heading-large">
-                    <h2 class="wow rubberBand" data-wow-duration="1s" data-wow-delay="0.1s">Latest Updates</h2>
+                    <h2 class="wow rubberBand" data-wow-duration="1s" data-wow-delay="0s">
+                        <a href="updates.html">Latest Updates</a>
+                    </h2>
                 </div>
-                <div class="ms-auto mt-2">
+                <div class="ms-auto mt-2 wow bounceIn">
                     <a class="btn btn-primary has-icon" href="updates.html">
                         View All Updates
                         <span class="icon"><i data-feather="arrow-right-circle"></i></span>
@@ -355,9 +390,9 @@
         <div class="container">
             <div class="row">
                 <div class="col col-sm-8">
-                    <div class="updateHorizontal-slider wow zoomInLeft" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <div class="updateHorizontal-slider wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="updateHorizontalSlider-thumbnail" data-cursor-text="Read Updated">
-                            <div class="updateHorizontalSlider-box">
+                            <div class="updateHorizontalSlider-box" onclick="window.location.href = '/updates.html'">
                                 <img src="images/updates/update-1.jpg" alt class="img-fluid">
                                 <div class="u-info">
                                     <div class="u-name">The West Coast Eagles make a spectacular entrance onto the
@@ -374,7 +409,7 @@
                             </div>
                         </div>
                         <div class="updateHorizontalSlider-thumbnail" data-cursor-text="Read Updated">
-                            <div class="updateHorizontalSlider-box">
+                            <div class="updateHorizontalSlider-box" onclick="window.location.href = '/updates.html'">
                                 <img src="images/updates/update-2.jpg" alt class="img-fluid">
                                 <div class="u-info">
                                     <div class="u-name">The West Coast Eagles make a spectacular entrance onto the
@@ -391,7 +426,7 @@
                             </div>
                         </div>
                         <div class="updateHorizontalSlider-thumbnail" data-cursor-text="Read Updated">
-                            <div class="updateHorizontalSlider-box">
+                            <div class="updateHorizontalSlider-box" onclick="window.location.href = '/updates.html'">
                                 <img src="images/updates/update-3.jpg" alt class="img-fluid">
                                 <div class="u-info">
                                     <div class="u-name">The West Coast Eagles make a spectacular entrance onto the
@@ -410,7 +445,7 @@
                     </div>
                 </div>
                 <div class="col col-sm-4 position-relative">
-                    <div class="updateVertical-slider wow zoomInRight" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <div class="updateVertical-slider wow fadeInRight" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="updateVerticalSlider-thumbnail">
                             <div class="updateVerticalSlider-box">
                                 <div class="row">
@@ -508,7 +543,7 @@
         <div class="container container-small">
             <div class="row gx-5">
                 <div class="col col-sm-4">
-                    <div class="info-block wow zoomInLeft" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <div class="info-block wow flipInY" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="card card-blue">
                             <div class="card-header">
                                 <img class="icon" src="images/location.svg" />
@@ -524,7 +559,7 @@
                     </div>
                 </div>
                 <div class="col col-sm-4">
-                    <div class="info-block wow zoomIn" data-wow-duration="1s" data-wow-delay="0.3s">
+                    <div class="info-block wow flipInY" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="card card-purple">
                             <div class="card-header">
                                 <img class="icon" src="images/connect.svg" />
@@ -554,7 +589,7 @@
                     </div>
                 </div>
                 <div class="col col-sm-4">
-                    <div class="info-block wow zoomInRight" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <div class="info-block wow flipInY" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="card card-red">
                             <div class="card-header">
                                 <img class="icon" src="images/send.svg" />
@@ -636,7 +671,7 @@
                     </div>
                     <div class="col-sm-3">
                         <div class="widget sitemap-links-widget bring-up wow zoomInLeft" data-wow-duration="1s"
-                            data-wow-delay="0.1s">
+                            data-wow-delay="0s">
                             <h3 class="btn btn-primary">Product Categories</h3>
                             <ul>
                                 <li><a href="#" class="text-truncate">Industrial Pipe Plug Solution</a></li>
@@ -652,7 +687,7 @@
                     </div>
                     <div class="col-sm-3">
                         <div class="widget sitemap-links-widget bring-up wow zoomInRight" data-wow-duration="1s"
-                            data-wow-delay="0.1s">
+                            data-wow-delay="0s">
                             <h3 class="btn btn-primary">Latest Updates</h3>
                             <ul>
                                 <li><a href="#" class="text-truncate">Don't buy an inflatable until you've read
@@ -698,7 +733,7 @@
         <div class="footer-standard">
             <div class="container container-extraLarge">
                 <div class="row align-items-end footerLogosMobile-slider">
-                    <div class="col col-sm-3 wow bounce" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <div class="col col-sm-3 wow bounce" data-wow-duration="1s" data-wow-delay="0s">
                         <h5 class="text-light">This website is powered by:</h5>
                         <img class="img-md"
                             src="https://cdn.pixabay.com/photo/2016/12/12/12/31/australia-1901457_1280.png" />
@@ -711,7 +746,7 @@
                             class="img-sm my-3" />
                         <h4 class="text-white m-0">&copy; Copyrights.</h4>
                     </div>
-                    <div class="col col-sm-3 text-end wow bounce" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <div class="col col-sm-3 text-end wow bounce" data-wow-duration="1s" data-wow-delay="0s">
                         <h5 class="text-light">SEO-SEM-SMM-PCC By:</h5>
                         <img class="img-md"
                             src="https://media.designrush.com/agencies/173232/conversions/Media-Brokers-International-logo-profile.jpg" />

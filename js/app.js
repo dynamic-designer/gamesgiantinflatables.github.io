@@ -282,7 +282,7 @@
             headerHeight = $("header").outerHeight(),
             windowHeight = $(window).outerHeight();
 
-        if (scroll >= windowHeight){
+        if (scroll >= 500){
             $("body").css("padding-top", headerHeight+"px");
             sticky.addClass('position-fixed');
         } else {
