@@ -157,7 +157,7 @@
                 </h2>
             </div>
             <div class="mb-4 wow bounce" data-wow-duration="1s" data-wow-delay="0s">
-                <div class="dropdown">
+                <div class="dropdown custom-dropdown">
                     <button type="button" class="btn btn-primary has-icon dropdown-toggle has-icon-left" type="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="left-icon">
@@ -169,14 +169,15 @@
                         </span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Industrial Pipe Plug Solution</a></li>
-                        <li><a class="dropdown-item" href="#">Industrial Workshop Dome</a></li>
-                        <li><a class="dropdown-item" href="#">Fall Arrest System</a></li>
-                        <li><a class="dropdown-item" href="#">Inflatable Casting shelter</a></li>
-                        <li><a class="dropdown-item" href="#">Inflatable Dome Shelter</a></li>
-                        <li><a class="dropdown-item" href="#">Inflatable Blasting Booth</a></li>
-                        <li><a class="dropdown-item" href="#">Lifting and Salvage</a></li>
-                        <li><a class="dropdown-item" href="#">Emergency Response Inflatable</a></li>
+                        <li class="arrow-up"></li>
+                        <li><a class="dropdown-item" href="#">BOUNCY CASTLE</a></li>
+                        <li><a class="dropdown-item" href="#">CARTOON CHARACTOR</a></li>
+                        <li><a class="dropdown-item" href="#">SLIDES & JUMPERS</a></li>
+                        <li><a class="dropdown-item" href="#">GARDEN GAMES</a></li>
+                        <li><a class="dropdown-item" href="#">AIR SKY DANCERS</a></li>
+                        <li><a class="dropdown-item" href="#">TRAMPOLINE</a></li>
+                        <li><a class="dropdown-item" href="#">Sub Category</a></li>
+                        <li><a class="dropdown-item" href="#">Another Sub Category</a></li>
                     </ul>
                 </div>
             </div>
@@ -318,7 +319,7 @@
                             <div class="i-title">Heading</div>
                         </div>
                     </div>
-                    <div class="info-block h-auto wow bounceInRight" data-wow-duration="0.5s" data-wow-delay="0s">
+                    <div class="info-block h-auto wow bounceInRight" data-wow-duration="0.5s" data-wow-delay="0s" id="enqueryBox">
                         <div class="card card-red">
                             <div class="card-header">
                                 <img class="icon" src="images/send.svg" />
@@ -863,6 +864,14 @@
 
     <!-- Custom script for this template -->
     <script src="js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            var enqueryBoxHeight = $("#enqueryBox").outerHeight();
+            if (window.matchMedia('(min-width: 768px)').matches) {
+                $(".productDeatailImage-slider").find(".slick-slide").css("height", enqueryBoxHeight + "px");
+            }
+        })
+    </script>
 </body>
 
 </html>

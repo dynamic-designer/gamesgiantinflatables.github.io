@@ -160,14 +160,14 @@
                         <div class="col-md-12">
                             <div class="information-box">
                                 <div class="contect-box bring-up">
-                                    <div class="i-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0s">Lorem Ipsum is simply dummy text of the printing and
+                                    <div class="i-title wow zoomIn titleHeight" data-wow-duration="1s" data-wow-delay="0s">Lorem Ipsum is simply dummy text of the printing and
                                         typesetting industry has been the industry's standard dummy text</div>
                                 </div>
                                 <div class="img-box wow bounceInLeft" data-wow-duration="0.5s" data-wow-delay="0s">
                                     <div class="faqImages-slider">
-                                        <img src="https://placehold.co/1500x750/00645b/02524b" class="img-fluid mb-4" />
-                                        <img src="https://placehold.co/1500x750/673ab7/481f91" class="img-fluid mb-4" />
-                                        <img src="https://placehold.co/1500x750/795548/5a3a2e" class="img-fluid mb-4" />
+                                        <div style="background-image: url(images/slider/slide-1.jpg);" class="mb-4"></div>
+                                        <div style="background-image: url(images/slider/slide-2.jpg);" class="mb-4"></div>
+                                        <div style="background-image: url(images/slider/slide-3.jpg);" class="mb-4"></div>
                                     </div>
                                 </div>
                                 <div class="contect-box bring-up wow zoomIn" data-wow-duration="1s"
@@ -226,7 +226,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 is-enqueryBox">
-                    <div class="info-block h-auto wow bounceInRight" data-wow-duration="0.5s" data-wow-delay="0s">
+                    <div class="info-block h-auto wow bounceInRight" data-wow-duration="0.5s" data-wow-delay="0s" id="enqueryBox">
                         <div class="card card-red">
                             <div class="card-header">
                                 <img class="icon" src="images/send.svg" />
@@ -845,6 +845,16 @@
 
     <!-- Custom script for this template -->
     <script src="js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            var titleHeight = $(".titleHeight").outerHeight(true);
+            var enqueryBoxHeight = $("#enqueryBox").outerHeight();
+            if (window.matchMedia('(min-width: 768px)').matches) {
+                $(".faqImages-slider").find(".slick-slide").css("height", enqueryBoxHeight + "px");
+                $(".is-enqueryBox").css("margin-top", titleHeight + "px");
+            }
+        })
+    </script>
 </body>
 
 </html>

@@ -551,33 +551,75 @@ textarea.form-control {
 
 .dropdown {
     .dropdown-menu {
-        a {
-            font-size: 18px;
-            padding: 10px;
+        border-color: #aaa;
+        opacity: 0;
+        transition: .3s margin-top ease, .3s opacity ease, .3s visibility ease;
+        visibility: hidden;
+        padding: 0;
 
-            &:hover {
-                background: linear-gradient(135deg,
-                        rgba(248, 13, 105, 1) 10%,
-                        rgba(139, 29, 165, 1) 20%,
-                        rgba(37, 124, 229, 1) 30%,
-                        rgba(225, 165, 42, 1) 40%,
-                        rgba(243, 101, 5, 1) 50%,
-                        rgba(63, 144, 16, 1) 60%,
-                        rgba(229, 27, 96, 1) 70%,
-                        rgba(128, 40, 173, 1) 80%,
-                        rgba(4, 149, 252, 1) 90%,
-                        rgba(4, 149, 252, 1) 100%);
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
+        li {
+            a {
+                background-color: transparent;
+                border-bottom: 1px solid #aaa;
+                font-size: 18px;
+                padding: 12px 10px 8px 10px;
+                transition: all 0.5s;
+                font-weight: 600;
+                padding-right: 20px;
+                text-transform: uppercase;
+
+                &:hover {
+                    background: linear-gradient(135deg,
+                            rgba(248, 13, 105, 0.2) 10%,
+                            rgba(139, 29, 165, 0.2) 20%,
+                            rgba(37, 124, 229, 0.2) 30%,
+                            rgba(225, 165, 42, 0.2) 40%,
+                            rgba(243, 101, 5, 0.2) 50%,
+                            rgba(63, 144, 16, 0.2) 60%,
+                            rgba(229, 27, 96, 0.2) 70%,
+                            rgba(128, 40, 173, 0.2) 80%,
+                            rgba(4, 149, 252, 0.2) 90%,
+                            rgba(4, 149, 252, 0.2) 100%);
+                    padding-left: 20px;
+                    padding-right: 10px;
+                }
             }
+
+            &:last-child {
+                a {
+                    border-bottom: 0 none;
+                }
+            }
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            margin-top: 20px !important;
+            transform: none !important;
+            top: 50px !important;
+            height: 100% !important;
+            display: inline-table;
+        }
+
+        .arrow-up {
+            width: 0;
+            height: 0;
+            border-left: 10px solid rgba(0, 0, 0, 0);
+            border-right: 10px solid rgba(0, 0, 0, 0);
+            border-bottom: 10px solid #aaa;
+            position: absolute;
+            top: -10px;
+            left: 15px;
         }
     }
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
         .dropdown-menu {
-            a {
-                font-size: 14px;
-                padding: 7px 10px;
+            li {
+                a {
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -762,7 +804,7 @@ header {
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
         .navbar-brand img {
-            height: 100px;
+            height: 120px;
         }
 
         .header-right-top {
@@ -794,12 +836,12 @@ header {
                         font-size: 14px;
                         font-weight: 600;
                         height: 40px;
-                        line-height: 38px;
+                        line-height: 36px;
                         padding: 0px 14px 0px 12px;
                         margin: 0 10px 0 0;
 
                         .feather {
-                            margin-top: -6px;
+                            margin-top: -4px;
                             margin-right: 5px;
                             width: 20px;
                             height: 20px;
@@ -1328,7 +1370,6 @@ header {
         .slide {
             border-radius: 20px;
             overflow: hidden;
-            height: 650px;
 
             img {
                 width: 100%;
@@ -1395,10 +1436,6 @@ header {
 
         .productDeatailImage-slider {
             margin-bottom: 15px;
-
-            .slide {
-                height: 450px;
-            }
         }
 
         .productDeatailThumb-slider {
@@ -1502,7 +1539,7 @@ header {
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
             padding: 25px;
-            padding-top: 50%;
+            padding-top: 50px;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -1585,6 +1622,11 @@ header {
 }
 
 .faqImages-slider {
+    .slick-slide {
+        border-radius: 20px;
+        background-size: cover;
+        background-position: center center;
+    }
     .slick-prev {
         left: 20px;
         z-index: 1;
@@ -1690,7 +1732,7 @@ header {
         margin-bottom: 20px;
 
         .updateVerticalSlider-box {
-            padding: 20px;
+            padding: 15px;
 
             .left-block {
                 width: 150px;
@@ -1707,11 +1749,13 @@ header {
             .u-info {
                 .u-name {
                     color: #000;
+                    display: block;
                     //font-family: "SKODA";
                     font-size: 26px;
                     font-weight: 600;
                     line-height: 26px;
                     margin-bottom: 15px;
+                    text-decoration: none;
                 }
 
                 .u-details {
@@ -1758,7 +1802,7 @@ header {
             margin-bottom: 15px;
 
             .updateVerticalSlider-box {
-                padding: 15px;
+                padding: 12px;
 
                 .left-block {
                     width: 110px;
@@ -2018,7 +2062,7 @@ header {
     .ourProducts-banner {
         color: white;
         text-align: center;
-        padding: 45px 0;
+        padding: 40px 0 15px;
         position: relative;
         z-index: 1;
 
@@ -2098,7 +2142,7 @@ header {
             position: relative;
 
             &:after {
-                content: "";
+                //content: "";
                 background: linear-gradient(0deg, #f7f7f7, rgba(247, 247, 247, 0.7), transparent);
                 position: absolute;
                 bottom: 0px;
@@ -2110,6 +2154,10 @@ header {
             p {
                 font-size: 18px;
                 line-height: 28px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
             }
         }
 
@@ -2436,6 +2484,10 @@ header {
 
                 .breadcrumb {
                     li {
+                        &::after {
+                            right: -4px;
+                        }
+
                         a {
                             font-size: 14px;
                             padding: 6px 15px;
