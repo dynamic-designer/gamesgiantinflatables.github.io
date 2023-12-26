@@ -354,6 +354,7 @@ textarea.form-control {
 
             .feather {
                 left: -2px;
+                top: -1px;
             }
         }
     }
@@ -551,7 +552,8 @@ textarea.form-control {
 
 .dropdown {
     .dropdown-menu {
-        border-color: #aaa;
+        background: linear-gradient(#fff, #fff) padding-box, linear-gradient(135deg, rgb(248, 13, 105) 10%, rgb(139, 29, 165) 20%, rgb(37, 124, 229) 30%, rgb(225, 165, 42) 40%, rgb(243, 101, 5) 50%, rgb(63, 144, 16) 60%, rgb(229, 27, 96) 70%, rgb(128, 40, 173) 80%, rgb(4, 149, 252) 90%, rgb(4, 149, 252) 100%) border-box;
+        border: 3px solid rgba(0, 0, 0, 0);
         opacity: 0;
         transition: .3s margin-top ease, .3s opacity ease, .3s visibility ease;
         visibility: hidden;
@@ -607,19 +609,27 @@ textarea.form-control {
             height: 0;
             border-left: 10px solid rgba(0, 0, 0, 0);
             border-right: 10px solid rgba(0, 0, 0, 0);
-            border-bottom: 10px solid #aaa;
+            border-bottom: 10px solid #f80d69;
             position: absolute;
             top: -10px;
-            left: 15px;
+            left: 20px;
         }
     }
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
         .dropdown-menu {
             li {
+                &.arrow-up {
+                    left: 15px;
+                }
+
                 a {
                     font-size: 14px;
                 }
+            }
+
+            &.active {
+                margin-top: 5px !important;
             }
         }
     }
@@ -837,7 +847,7 @@ header {
                         font-weight: 600;
                         height: 40px;
                         line-height: 36px;
-                        padding: 0px 14px 0px 12px;
+                        padding: 0px 12px;
                         margin: 0 10px 0 0;
 
                         .feather {
@@ -1250,6 +1260,9 @@ header {
         .slick-arrow {
             .btn-primary {
                 padding: 0 5px;
+                line-height: 34px;
+                height: 36px;
+                width: 36px;
 
                 .feather {
                     width: 26px;
@@ -1366,6 +1379,8 @@ header {
 
     .productDeatailImage-slider {
         margin-bottom: 15px;
+        border-radius: 20px;
+        overflow: hidden;
 
         .slide {
             border-radius: 20px;
@@ -1627,6 +1642,7 @@ header {
         background-size: cover;
         background-position: center center;
     }
+
     .slick-prev {
         left: 20px;
         z-index: 1;
@@ -2062,7 +2078,7 @@ header {
     .ourProducts-banner {
         color: white;
         text-align: center;
-        padding: 40px 0 15px;
+        padding: 25px 0;
         position: relative;
         z-index: 1;
 
@@ -2504,7 +2520,13 @@ header {
                 }
 
                 .btn-primary {
+                    padding-left: 35px;
                     min-width: auto;
+
+                    .left-icon {
+                        left: 6px;
+                        top: 1px;
+                    }
                 }
             }
         }
