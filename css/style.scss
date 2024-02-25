@@ -40,6 +40,9 @@
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
         max-width: calc(100% - 300px);
     }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        max-width: calc(100% - 60px);
+    }
 }
 
 body {
@@ -132,6 +135,14 @@ textarea.form-control {
                 width: 24px;
             }
         }
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+    .fullWidthInTouchDevice {
+        width: 100%;
+    }
+    .hideInTouchDevice {
+        display: none;
     }
 }
 
@@ -351,6 +362,57 @@ textarea.form-control {
             height: 30px;
             line-height: 30px;
             padding: 1px 10px;
+
+            .feather {
+                left: -2px;
+                top: -1px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        font-size: 16px;
+        height: 40px;
+        line-height: 40px;
+
+        &.has-icon {
+            padding-right: 50px;
+
+            .icon {
+                right: 13px;
+
+                .feather {
+                    height: 24px;
+                    width: 24px;
+                }
+            }
+        }
+
+        &.has-icon-left {
+            padding-left: 50px;
+
+            .left-icon {
+                left: 13px;
+
+                .feather,
+                img {
+                    height: 26px;
+                    width: 26px;
+                }
+            }
+
+            .icon {
+                img {
+                    height: 30px;
+                }
+            }
+        }
+
+        &.btn-sm {
+            font-size: 14px;
+            height: 30px;
+            line-height: 30px;
+            padding: 0px 10px;
 
             .feather {
                 left: -2px;
@@ -616,7 +678,7 @@ textarea.form-control {
         }
     }
 
-    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+    @media screen and (min-width: 1024px) and (max-width: 1600px) {
         .dropdown-menu {
             li {
                 &.arrow-up {
@@ -861,6 +923,68 @@ header {
             }
         }
     }
+
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        >.container-fluid {
+            position: relative;
+            padding-bottom: 70px;
+            .header-right-top {
+                >.row {
+                    .col-5,
+                    .col-7 {
+                        width: 100%;
+                        margin-bottom: 13px;
+                        margin-top: 13px;
+                    }
+                }
+                .search {
+                    max-width: 70%;
+                    margin-left: auto;
+                    .search-control {
+                        height: 50px;
+                    }
+                }
+                .get-in-touch {
+                    .g-item {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .header-right-bottom {
+                position: absolute;
+                padding: 0 15px;
+                width: 100%;
+                left: 0;
+                bottom: 10px;
+
+                .navbar {
+                    .nav-item {
+                        .nav-link {
+                            font-size: 16px;
+                            margin-right: 10px;
+                            height: 46px;
+                            padding: 0px 10px;
+                            line-height: 42px;
+
+                            .feather {
+                                margin-right: 10px;
+                                height: 24px;
+                                width: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        >.container-fluid {
+            position: relative;
+            padding-bottom: 70px;
+            padding-top: 70px;
+        }
+    }
 }
 
 .heading {
@@ -935,6 +1059,19 @@ header {
         &.heading-large {
             h2 {
                 font-size: 36px;
+            }
+        }
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        h2 {
+            font-size: 34px;
+            padding-bottom: 5px;
+            margin-bottom: 12px !important;
+        }
+
+        &.heading-large {
+            h2 {
+                font-size: 44px;
             }
         }
     }
@@ -1118,6 +1255,28 @@ header {
             }
         }
     }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        .hero-slider {
+            .slick-list .slick-track .slick-slide {
+                padding-bottom: 100px;
+
+                .slide-caption {
+                    h2 {
+                        font-size: 40px;
+                    }
+
+                    h1 {
+                        font-size: 60px;
+                        letter-spacing: 2px;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+            .slick-dots {
+                bottom: 40px;
+            }
+        }
+    }
 }
 
 .theme-footer {
@@ -1146,6 +1305,7 @@ header {
                     margin-bottom: 15px;
 
                     a {
+                        display: block;
                         color: white;
                         font-size: 16px;
                         text-decoration: none;
@@ -1225,6 +1385,31 @@ header {
             }
         }
     }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        .footer-standard {
+            padding: 25px 0;
+
+            h4 {
+                font-size: 18px;
+            }
+
+            h5 {
+                font-size: 16px;
+            }
+
+            .img-lg {
+                width: 250px;
+            }
+
+            .img-md {
+                width: 160px;
+            }
+
+            .img-sm {
+                width: 120px;
+            }
+        }
+    }
 }
 
 .slick-slider {
@@ -1239,6 +1424,7 @@ header {
             .feather {
                 width: 30px;
                 height: 30px;
+                transform: scaleX(-1);
             }
         }
 
@@ -1249,11 +1435,13 @@ header {
     }
 
     .slick-prev {
-        left: -66px;
+        left: auto !important;
+        right: -66px;
     }
 
     .slick-next {
-        right: -66px;
+        right: auto !important;
+        left: -66px;
     }
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -1274,11 +1462,36 @@ header {
         }
 
         .slick-prev {
-            left: -50px;
+            right: -45px;
         }
 
         .slick-next {
-            right: -50px;
+            left: -45px;
+        }
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        .slick-arrow {
+            .btn-primary {
+                padding: 0 5px;
+                line-height: 36px;
+                height: 36px;
+                width: 36px;
+
+                .feather {
+                    width: 26px;
+                    height: 26px;
+                    stroke-width: 1.5px;
+                    margin-top: -1px;
+                }
+            }
+        }
+
+        .slick-prev {
+            right: -45px;
+        }
+
+        .slick-next {
+            left: -45px;
         }
     }
 }
@@ -1310,11 +1523,30 @@ header {
 }
 
 .productSlider-thumbnail {
+
     .productSlider-box {
+        background-image: url("../images/blur.jpg");
+        background-size: cover !important;
+        background-position: center;
         border-radius: 20px;
         cursor: pointer;
+        height: 400px;
         overflow: hidden;
         position: relative;
+
+        .productSubCategory-slider {
+            .slick-slide {
+                height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .slider-bg {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
 
         .p-info {
             background: rgb(0, 0, 0);
@@ -1356,9 +1588,41 @@ header {
     }
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
-
         .productSlider-box {
+            height: 280px;
+
+            .productSubCategory-slider {
+                .slick-slide {
+                    height: 280px;
+                }
+            }
+
             .p-info {
+                .p-name {
+                    font-size: 20px;
+                    margin-bottom: 10px
+                }
+
+                .p-footer {
+                    .p-price {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        .productSlider-box {
+            height: 220px;
+
+            .productSubCategory-slider {
+                .slick-slide {
+                    height: 220px;
+                }
+            }
+
+            .p-info {
+                padding: 10px 15px;
                 .p-name {
                     font-size: 20px;
                     margin-bottom: 10px
@@ -1383,14 +1647,31 @@ header {
         overflow: hidden;
 
         .slide {
+            background-image: url("../images/blur.jpg");
+            background-size: cover !important;
+            background-position: center;
             border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
 
             img {
-                width: 100%;
-                height: 100%;
+                border-radius: 0;
+                max-width: 100%;
+                max-height: 100%;
             }
         }
+    }
+
+    .slick-prev {
+        right: 10px;
+        z-index: 1;
+    }
+
+    .slick-next {
+        left: 10px;
+        z-index: 1;
     }
 
     .productDeatailThumb-slider {
@@ -1434,16 +1715,14 @@ header {
                 transition: all 2s;
             }
         }
-    }
 
-    .slick-prev {
-        left: 10px;
-        z-index: 1;
-    }
+        .slick-prev {
+            right: 0px;
+        }
 
-    .slick-next {
-        right: 10px;
-        z-index: 1;
+        .slick-next {
+            left: 0px;
+        }
     }
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -1544,10 +1823,26 @@ header {
 
 .faqSlider-thumbnail {
     .faqSlider-box {
+        background-image: url("../images/blur.jpg");
+        background-size: cover !important;
+        background-position: center;
         border-radius: 20px;
         cursor: pointer;
+        height: 465px;
         overflow: hidden;
         position: relative;
+
+        .faqSubCategory-slider {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .slider-bg {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
 
         .f-info {
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
@@ -1568,6 +1863,7 @@ header {
                 font-size: 26px;
                 font-weight: 600;
                 letter-spacing: 1px;
+                text-shadow: 0px 0px 10px black;
                 margin-bottom: 10px;
             }
 
@@ -1577,6 +1873,7 @@ header {
                 font-size: 20px;
                 line-height: 20px;
                 letter-spacing: 1px;
+                text-shadow: 0px 0px 10px black;
                 margin-bottom: 15px;
             }
         }
@@ -1584,6 +1881,8 @@ header {
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
         .faqSlider-box {
+            height: 330px;
+
             .f-info {
                 .f-name {
                     font-size: 18px;
@@ -1600,15 +1899,55 @@ header {
             }
         }
     }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        .faqSlider-box {
+            height: 250px;
+
+            .f-info {
+                .f-name {
+                    font-size: 18px;
+                    line-height: 18px;
+                    margin-bottom: 8px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                .f-details {
+                    font-size: 14px;
+                    line-height: 16px;
+                    letter-spacing: 0px;
+                    margin-bottom: 10px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
 }
 
 .faq-thumbnail {
     margin-bottom: 50px;
 
     .faq-box {
-        img {
+        .faqImage-box {
+            background-image: url("../images/blur.jpg");
+            background-size: cover !important;
+            background-position: center;
             border-radius: 20px;
-            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 470px;
+            overflow: hidden;
+
+            img {
+                cursor: pointer;
+                max-width: 100%;
+                max-height: 100%;
+            }
         }
 
         .f-info {
@@ -1625,6 +1964,25 @@ header {
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
         .faq-box {
+            .faqImage-box {
+                height: 330px;
+            }
+
+            .f-info {
+                .f-name {
+                    font-size: 20px;
+                    line-height: 20px;
+                    margin: 15px 0;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        .faq-box {
+            .faqImage-box {
+                height: 250px;
+            }
+
             .f-info {
                 .f-name {
                     font-size: 20px;
@@ -1644,12 +2002,12 @@ header {
     }
 
     .slick-prev {
-        left: 20px;
+        right: 20px;
         z-index: 1;
     }
 
     .slick-next {
-        right: 20px;
+        left: 20px;
         z-index: 1;
     }
 }
@@ -1657,10 +2015,26 @@ header {
 .updateHorizontal-slider {
     .updateHorizontalSlider-thumbnail {
         .updateHorizontalSlider-box {
+            background-image: url("../images/blur.jpg");
+            background-size: cover !important;
+            background-position: center;
             border-radius: 20px;
             cursor: pointer;
+            height: 570px;
             overflow: hidden;
             position: relative;
+
+            .updateSubCategory-slider {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .slider-bg {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
 
             .u-info {
                 background: rgba(0, 0, 0, 0.7);
@@ -1706,18 +2080,42 @@ header {
     }
 
     .slick-arrow.slick-prev {
-        left: 20px;
+        right: 20px;
         z-index: 1;
     }
 
     .slick-arrow.slick-next {
-        right: 20px;
+        left: 20px;
         z-index: 1;
     }
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
         .updateHorizontalSlider-thumbnail {
             .updateHorizontalSlider-box {
+                height: 410px;
+
+                .u-info {
+                    padding: 25px 30px;
+
+                    .u-name {
+                        font-size: 22px;
+                        line-height: 22px;
+                    }
+
+                    .u-footer {
+                        .u-location {
+                            color: white;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        .updateHorizontalSlider-thumbnail {
+            .updateHorizontalSlider-box {
+
                 .u-info {
                     padding: 25px 30px;
 
@@ -1760,6 +2158,8 @@ header {
 
             img {
                 border-radius: 20px;
+                width: 126px;
+                height: 126px
             }
 
             .u-info {
@@ -1804,11 +2204,11 @@ header {
     }
 
     .slick-prev {
-        left: 0;
+        right: 0;
     }
 
     .slick-next {
-        right: 0;
+        left: 0;
     }
 
     @media screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -1826,6 +2226,10 @@ header {
 
                 .right-block {
                     width: calc(100% - 110px);
+                }
+
+                img {
+                    height: 86px;
                 }
 
                 .u-info {
@@ -2060,6 +2464,35 @@ header {
             }
         }
     }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        .card {
+            .card-header {
+                font-size: 20px;
+                font-weight: normal;
+                height: 46px;
+                letter-spacing: 0;
+
+                .icon {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+
+            .card-body {
+                padding: 15px;
+            }
+
+            &.card-purple {
+                .card-body {
+                    font-size: 16px;
+
+                    .feather {
+                        stroke-width: 1.5;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .parallax {
@@ -2125,6 +2558,27 @@ header {
 
             .p-contact {
                 font-size: 18px;
+
+                .feather {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        .ourProducts-banner {
+            .p-title {
+                font-size: 44px;
+            }
+
+            .p-subTitle {
+                font-size: 22px;
+            }
+
+            .p-contact {
+                font-size: 20px;
 
                 .feather {
                     width: 30px;
@@ -2202,6 +2656,28 @@ header {
             }
         }
     }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        .contect-box {
+            .i-title {
+                font-size: 22px;
+                line-height: 24px;
+                margin-bottom: 10px;
+            }
+
+            .i-details p {
+                font-size: 16px;
+                line-height: 24px;
+                display: -webkit-box;
+                -webkit-line-clamp: 13;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .a-btn {
+                bottom: -45px;
+            }
+        }
+    }
 }
 
 .update-box {
@@ -2238,7 +2714,7 @@ header {
         background-color: #f1f1f1;
     }
 
-    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+    @media screen and (min-width: 1024px) and (max-width: 1600px) {
         .contect-box {
             padding: 30px 20px;
 
@@ -2477,7 +2953,7 @@ header {
         }
     }
 
-    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+    @media screen and (min-width: 1024px) and (max-width: 1600px) {
         .background-container {
             height: 400px;
 

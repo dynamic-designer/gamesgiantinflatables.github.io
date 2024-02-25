@@ -7,18 +7,34 @@
           = FUNCTIONS
       -------------------------------------------*/
 
-    // Hero slider background setting
+      // Hero slider background setting
     function sliderBgSetting() {
         if ($(".hero-slider .slide").length) {
-            $(".hero-slider .slide").each(function () {
+            $(".hero-slider .slide").each(function() {
                 var $this = $(this);
                 var img = $this.find(".slider-bg").attr("src");
 
                 $this.css({
-                    backgroundImage: "url(" + img + ")",
+                    backgroundImage: "url("+ img +")",
                     backgroundSize: "cover",
-                    backgroundPosition: "center center"
+                    backgroundPosition: "center center",
+                    backgroundRepeat: "no-repeat"
                 })
+            });
+        }
+    }
+
+    function productSubCategorySlider() {
+        if ($(".productSubCategory-slider").length) {
+            $(".productSubCategory-slider").slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true ,
+                autoplaySpeed: 4000,
+                infinite: true,
+                arrows: false,
+                pauseOnFocus: false,
+                pauseOnHover: false,
             });
         }
     }
@@ -27,7 +43,7 @@
     function heroSlider() {
         if ($(".hero-slider").length) {
             $(".hero-slider").slick({
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 6000,
                 pauseOnHover: true,
                 infinite: true,
@@ -190,7 +206,7 @@
                         '<div class="slick-next slick-btn"><span class="btn btn-primary"><i data-feather="arrow-right-circle"></i></span></div>',
                     responsive: [
                         {
-                            breakpoint: 768,
+                            breakpoint: 1200,
                             settings: {
                                 slidesToShow: 3,
                             }
@@ -245,6 +261,7 @@
         updatesSlider();
         faqImagesSlider();
         moreUpdateSlider();
+        productSubCategorySlider();
 
         var windowHeight = $(window).outerHeight()
         var headerHeight = $('header').outerHeight();
@@ -282,6 +299,9 @@
             });
 
         });
+
+        var windowWidth = $(window).outerWidth();
+        $("header").css("width", windowWidth +"px");
 
         //Feather Icon Init
         feather.replace();
