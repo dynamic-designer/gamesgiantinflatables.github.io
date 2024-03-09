@@ -34,7 +34,7 @@
                 infinite: true,
                 arrows: false,
                 pauseOnFocus: false,
-                pauseOnHover: false,
+                pauseOnHover: false
             });
         }
     }
@@ -95,6 +95,7 @@
     }
 
     function productSlider() {
+        //debugger;
         if ($(".product-slider, .faq-slider").length) {
             $(".product-slider, .faq-slider").slick({
                 infinite: true,
@@ -106,7 +107,15 @@
                 prevArrow:
                     '<div class="slick-prev"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
                 nextArrow:
-                    '<div class="slick-next"><span class="btn btn-primary"><i data-feather="arrow-right-circle"></i></span></div>'
+                    '<div class="slick-next"><span class="btn btn-primary"><i data-feather="arrow-right-circle"></i></span></div>',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    }
+                ]
             });
         }
     }
@@ -247,6 +256,36 @@
         }
     }
 
+    function footerSitemapsMobileSlider() {
+        if ($(".footerSitemapsMobile-slider").length) {
+            $(".footerSitemapsMobile-slider").slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true ,
+                autoplaySpeed: 4000,
+                infinite: true,
+                arrows: true,
+                prevArrow:
+                    '<div class="slick-prev"><span class="btn btn-primary"><i data-feather="arrow-left-circle"></i></span></div>',
+                nextArrow:
+                    '<div class="slick-next"><span class="btn btn-primary"><i data-feather="arrow-right-circle"></i></span></div>'
+            });
+        }
+    }
+    
+    function footerLogosMobileSlider() {
+        if ($(".footerLogosMobile-slider").length) {
+            $(".footerLogosMobile-slider").slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true ,
+                autoplaySpeed: 4000,
+                infinite: true,
+                arrows: false
+            });
+        }
+    }
+
 
 
     /*==========================================================================
@@ -300,8 +339,13 @@
 
         });
 
-        var windowWidth = $(window).outerWidth();
+        var windowWidth = $(window).innerWidth();
         $("header").css("width", windowWidth +"px");
+
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            footerSitemapsMobileSlider();
+            footerLogosMobileSlider();
+        }
 
         //Feather Icon Init
         feather.replace();
@@ -339,5 +383,8 @@
     /*==========================================================================
           WHEN WINDOW RESIZE
       ==========================================================================*/
-    $(window).on("resize", function () { });
+    $(window).on("resize", function () {
+        var windowWidth = $(window).innerWidth();
+        $("header").css("width", windowWidth +"px");
+    });
 })(window.jQuery);

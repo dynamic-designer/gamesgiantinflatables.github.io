@@ -37,12 +37,119 @@
     <header>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4 pt-2">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="images/logo.png" />
-                    </a>
+                <div class="col-sm-4 pt-2">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="images/logo.png" />
+                        </a>
+                        <div>
+                            <button class="btn btn-dark slidingMenu" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                                <i data-feather="menu"></i>
+                            </button>
+                            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1"
+                                id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                                <div class="offcanvas-body d-block">
+                                    <ul class="navbar-nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="index.html"><i
+                                                    data-feather="home" class="me-2"></i> Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="about.html"><i data-feather="award"
+                                                    class="me-2"></i>
+                                                About</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="products.html"><i data-feather="grid"
+                                                    class="me-2"></i> Our Products</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"><i data-feather="book" class="me-2"></i>
+                                                Brochures</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="updates.html"><i data-feather="file-text"
+                                                    class="me-2"></i> Updates</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="case-studies.html"><i data-feather="clipboard"
+                                                    class="me-2"></i> Case Studies</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="contact.html"><i data-feather="phone-call"
+                                                    class="me-2"></i> Contact Us</a>
+                                        </li>
+                                    </ul>
+                                    <div class="info-block h-auto p-3">
+                                        <div class="card card-red">
+                                            <div class="card-header">
+                                                <img class="icon" src="images/send.svg" />
+                                                Enquire Now
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="enquire-form bring-up">
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text is-addon" id="">
+                                                            <i data-feather="user"></i>
+                                                        </span>
+                                                        <input type="text" class="form-control" placeholder="Name"
+                                                            aria-label="">
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text is-addon" id="">
+                                                            <i data-feather="smartphone"></i>
+                                                        </span>
+                                                        <input type="text" class="form-control" placeholder="Phone"
+                                                            aria-label="">
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text is-addon" id="">
+                                                            <i data-feather="mail"></i>
+                                                        </span>
+                                                        <input type="text" class="form-control" placeholder="Email"
+                                                            aria-label="">
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text is-addon" id="">
+                                                            <i data-feather="globe"></i>
+                                                        </span>
+                                                        <select class="form-select" aria-label="Select Country"
+                                                            required>
+                                                            <option value="" selected>Select Country</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text is-addon" id="basic-addon1">
+                                                            <i data-feather="message-square"></i>
+                                                        </span>
+                                                        <textarea class="form-control" id=""
+                                                            placeholder="Share Your Project Details"
+                                                            rows="3"></textarea>
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <small class="information-text">Your information is safe with
+                                                            us.
+                                                            We do not sell or rent emails.</small>
+                                                        <a class="btn btn-primary has-icon">
+                                                            Submit Now
+                                                            <span class="icon"><i
+                                                                    data-feather="arrow-right-circle"></i></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8 py-3">
+                <div class="col-sm-8 py-3">
                     <div class="header-right-top">
                         <div class="row align-items-center">
                             <div class="col-5">
@@ -213,14 +320,15 @@
                         <a href="product-category.html">BOUNCY CASTLE</a>
                     </h2>
                 </div>
-                <div class="product-slider extendSliderWidth">
+                <div class="product-slider">
                     <div class="productSlider-thumbnail slide wow bounceIn" data-cursor-text="Explore Product"
                         data-wow-duration="1s" data-wow-delay="0s">
                         <div class="px-2">
                             <div class="productSlider-box"
                                 onclick="window.location.href='https://dynamic-designer.github.io/gamesgiantinflatables.github.io/product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_1-1.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_1-1.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                     <div><img src="images/vertical.png" class="slider-bg img-fluid" /></div>
                                     <div><img src="images/horizontal.png" class="slider-bg img-fluid" /></div>
                                 </div>
@@ -243,9 +351,12 @@
                             <div class="productSlider-box"
                                 onclick="window.location.href='https://dynamic-designer.github.io/gamesgiantinflatables.github.io/product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_1-2.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_1-1.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_1-3.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_1-2.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_1-1.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_1-3.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                 </div>
                                 <div class="p-info">
                                     <div class="p-name">SUB CATEGORY HERE 2</div>
@@ -263,12 +374,14 @@
                     <div class="productSlider-thumbnail slide wow bounceIn" data-cursor-text="Explore Product"
                         data-wow-duration="1s" data-wow-delay="0s">
                         <div class="px-2">
-                            <div class="productSlider-box"
-                                onclick="window.location.href='product-category.html'">
+                            <div class="productSlider-box" onclick="window.location.href='product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_1-3.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_1-2.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_1-1.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_1-3.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_1-2.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_1-1.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                 </div>
                                 <div class="p-info">
                                     <div class="p-name">SUB CATEGORY HERE 3</div>
@@ -289,9 +402,12 @@
                             <div class="productSlider-box"
                                 onclick="window.location.href='https://dynamic-designer.github.io/gamesgiantinflatables.github.io/product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_1-4.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_1-2.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_1-3.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_1-4.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_1-2.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_1-3.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                 </div>
                                 <div class="p-info">
                                     <div class="p-name">SUB CATEGORY HERE 4</div>
@@ -321,9 +437,12 @@
                             <div class="productSlider-box"
                                 onclick="window.location.href='https://dynamic-designer.github.io/gamesgiantinflatables.github.io/product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_2-1.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_2-2.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_2-3.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_2-1.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_2-2.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_2-3.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                 </div>
                                 <div class="p-info">
                                     <div class="p-name">SUB CATEGORY HERE 1</div>
@@ -344,7 +463,8 @@
                             <div class="productSlider-box"
                                 onclick="window.location.href='https://dynamic-designer.github.io/gamesgiantinflatables.github.io/product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_2-2.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_2-2.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                     <div><img src="images/horizontal.png" class="slider-bg img-fluid" /></div>
                                     <div><img src="images/vertical.png" class="slider-bg img-fluid" /></div>
                                 </div>
@@ -367,9 +487,12 @@
                             <div class="productSlider-box"
                                 onclick="window.location.href='https://dynamic-designer.github.io/gamesgiantinflatables.github.io/product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_2-3.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_2-1.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_2-2.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_2-3.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_2-1.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_2-2.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                 </div>
                                 <div class="p-info">
                                     <div class="p-name">SUB CATEGORY HERE 3</div>
@@ -390,9 +513,12 @@
                             <div class="productSlider-box"
                                 onclick="window.location.href='https://dynamic-designer.github.io/gamesgiantinflatables.github.io/product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_2-4.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_2-3.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_2-2.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_2-4.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_2-3.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_2-2.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                 </div>
                                 <div class="p-info">
                                     <div class="p-name">SUB CATEGORY HERE 4</div>
@@ -422,9 +548,12 @@
                             <div class="productSlider-box"
                                 onclick="window.location.href='https://dynamic-designer.github.io/gamesgiantinflatables.github.io/product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_3-1.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_3-2.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_3-3.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_3-1.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_3-2.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_3-3.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                 </div>
                                 <div class="p-info">
                                     <div class="p-name">SUB CATEGORY HERE 1</div>
@@ -445,9 +574,12 @@
                             <div class="productSlider-box"
                                 onclick="window.location.href='https://dynamic-designer.github.io/gamesgiantinflatables.github.io/product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_3-2.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_3-3.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_3-1.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_3-2.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_3-3.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_3-1.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                 </div>
                                 <div class="p-info">
                                     <div class="p-name">SUB CATEGORY HERE 2</div>
@@ -468,7 +600,8 @@
                             <div class="productSlider-box"
                                 onclick="window.location.href='https://dynamic-designer.github.io/gamesgiantinflatables.github.io/product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_3-3.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_3-3.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                     <div><img src="images/vertical.png" class="slider-bg img-fluid" /></div>
                                     <div><img src="images/horizontal.png" class="slider-bg img-fluid" /></div>
                                 </div>
@@ -491,9 +624,12 @@
                             <div class="productSlider-box"
                                 onclick="window.location.href='https://dynamic-designer.github.io/gamesgiantinflatables.github.io/product-category.html'">
                                 <div class="productSubCategory-slider">
-                                    <div><img src="images/products/product-img_3-4.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_3-1.jpg" class="slider-bg img-fluid" /></div>
-                                    <div><img src="images/products/product-img_3-2.jpg" class="slider-bg img-fluid" /></div>
+                                    <div><img src="images/products/product-img_3-4.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_3-1.jpg" class="slider-bg img-fluid" />
+                                    </div>
+                                    <div><img src="images/products/product-img_3-2.jpg" class="slider-bg img-fluid" />
+                                    </div>
                                 </div>
                                 <div class="p-info">
                                     <div class="p-name">SUB CATEGORY HERE 4</div>
@@ -640,7 +776,7 @@
                         <a href="updates.html">Latest Updates</a>
                     </h2>
                 </div>
-                <div class="ms-auto mt-2 wow bounceIn">
+                <div class="ms-auto mt-2 wow bounceIn hideInMobile">
                     <a class="btn btn-primary has-icon" href="updates.html">
                         View All Updates
                         <span class="icon"><i data-feather="arrow-right-circle"></i></span>
@@ -1066,7 +1202,7 @@
     <section class="section-box">
         <div class="container container-small">
             <div class="row gx-5">
-                <div class="col col-sm-4">
+                <div class="col col-sm-4 mb-3">
                     <div class="info-block wow flipInY" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="card card-blue">
                             <div class="card-header">
@@ -1082,7 +1218,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col col-sm-4">
+                <div class="col col-sm-4 mb-3">
                     <div class="info-block wow flipInY" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="card card-purple">
                             <div class="card-header">
@@ -1111,7 +1247,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col col-sm-4">
+                <div class="col col-sm-4 mb-3">
                     <div class="info-block wow flipInY" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="card card-red">
                             <div class="card-header">
@@ -1255,24 +1391,21 @@
         </div>
         <div class="footer-standard">
             <div class="container container-extraLarge">
-                <div class="row align-items-end footerLogosMobile-slider">
+                <div class="row footerLogosMobile-slider">
                     <div class="col col-sm-3 wow bounce" data-wow-duration="1s" data-wow-delay="0s">
                         <h5 class="text-light">This website is powered by:</h5>
-                        <img class="img-md"
-                            src="https://cdn.pixabay.com/photo/2016/12/12/12/31/australia-1901457_1280.png" />
+                        <img class="img-md mt-3" src="images/studio5-logo.png" />
                     </div>
                     <div class="col col-sm-6 text-center wow zoomIn" data-wow-duration="1s" data-wow-delay="0.2s">
                         <h4 class="text-white">A Vanture of</h4>
-                        <img class="img-lg" src="https://wfiot2018.iot.ieee.org/files/2016/01/sample-logo@2x.png" />
-                        <h5 class="text-light text-uppercase my-3">Giant Inflatable India</h5>
-                        <img src="https://as2.ftcdn.net/v2/jpg/02/36/80/15/1000_F_236801508_TcqAY7IW2mHK19Bb16bYpNHiZVm1t2MD.jpg"
-                            class="img-sm my-3" />
-                        <h4 class="text-white m-0">&copy; Copyrights.</h4>
+                        <img class="img-md" src="images/gi-logo.png" />
+                        <h5 class="text-light text-uppercase mt-1 mb-0">Giant Inflatable India</h5>
                     </div>
                     <div class="col col-sm-3 text-end wow bounce" data-wow-duration="1s" data-wow-delay="0s">
                         <h5 class="text-light">SEO-SEM-SMM-PCC By:</h5>
-                        <img class="img-md"
-                            src="https://media.designrush.com/agencies/173232/conversions/Media-Brokers-International-logo-profile.jpg" />
+                        <img class="img-md" src="images/smb_logo.png" />
+                        <img src="https://as2.ftcdn.net/v2/jpg/02/36/80/15/1000_F_236801508_TcqAY7IW2mHK19Bb16bYpNHiZVm1t2MD.jpg"
+                            class="dmca-logo" />
                     </div>
                 </div>
             </div>
