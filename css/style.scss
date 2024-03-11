@@ -148,7 +148,9 @@ textarea.form-control {
         display: none;
     }
 }
-
+.slidingMenu {
+    display: none;
+}
 @media screen and (max-width: 768px) {
     .hideInMobile {
         display: none;
@@ -161,6 +163,9 @@ textarea.form-control {
 
     .aboutUsBox-section .information-box .contect-box .i-details p {
         -webkit-line-clamp: initial;
+    }
+    .slidingMenu {
+        display: block;
     }
 }
 
@@ -1597,7 +1602,7 @@ header {
         padding: 25px 0;
 
         .img-md {
-            height: 125px;
+            height: 120px;
         }
 
         .dmca-logo {
@@ -1641,16 +1646,8 @@ header {
                 font-size: 14px;
             }
 
-            .img-lg {
-                width: 250px;
-            }
-
             .img-md {
-                width: 160px;
-            }
-
-            .img-sm {
-                width: 120px;
+                height: 120px;
             }
         }
     }
@@ -1665,18 +1662,6 @@ header {
 
             h5 {
                 font-size: 16px;
-            }
-
-            .img-lg {
-                width: 250px;
-            }
-
-            .img-md {
-                width: 160px;
-            }
-
-            .img-sm {
-                width: 120px;
             }
         }
     }
