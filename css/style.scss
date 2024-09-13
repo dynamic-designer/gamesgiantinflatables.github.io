@@ -151,7 +151,7 @@ textarea.form-control {
 .slidingMenu {
     display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 320px) and (max-width: 1024px) {
     .hideInMobile {
         display: none;
     }
@@ -444,7 +444,7 @@ textarea.form-control {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         min-width: 100px;
         height: 40px;
         line-height: 40px;
@@ -763,7 +763,7 @@ textarea.form-control {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         .dropdown-toggle {
             display: table;
             margin: 0 auto;
@@ -1066,7 +1066,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         >.container-fluid {
             position: relative;
             padding-bottom: 0;
@@ -1307,7 +1307,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         &.heading-large {
             h2 {
                 font-size: 36px;
@@ -1525,7 +1525,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         height: 350px !important;
 
         .hero-slider {
@@ -1666,7 +1666,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         .footer-standard {
             h5 {
                 text-align: center !important;
@@ -1784,7 +1784,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         .slick-arrow {
             .btn-primary {
                 padding: 0 5px;
@@ -1832,7 +1832,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         .is-fluidBox {
             width: 100%;
         }
@@ -1966,7 +1966,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         .px-2 {
             padding: 0 !important;
         }
@@ -2288,7 +2288,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         .px-2 {
             padding: 0 !important;
 
@@ -2532,7 +2532,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         .updateHorizontalSlider-thumbnail {
             .updateHorizontalSlider-box {
                 height: 300px;
@@ -2932,7 +2932,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         .card {
             .card-header {
                 font-size: 20px;
@@ -3059,7 +3059,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         .ourProducts-banner {
             .p-title {
                 font-size: 40px;
@@ -3184,7 +3184,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         .contect-box {
             .i-title {
                 font-size: 22px;
@@ -3540,7 +3540,7 @@ header {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1024px) {
         .background-container {
             height: 300px;
 
